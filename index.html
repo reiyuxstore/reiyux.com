@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reiyux Store - Hub Layanan Digital & Afiliasi</title>
+    <title>Reiyux Store - Apps Premium & Digital Hub</title>
     
     <!-- SEO & Open Graph (OG) Meta Tags -->
     <meta name="description" content="Pusat layanan aplikasi premium, jasa paid edit, dan CC sinematik terpercaya di Reiyux Store.">
@@ -43,7 +43,6 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Light & Dark Styling Panels */
         .clean-panel {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -87,7 +86,6 @@
             box-shadow: 0 20px 40px -10px rgba(79, 70, 229, 0.2);
         }
 
-        /* Modern Page & Element Animations */
         .page-section {
             display: none;
             opacity: 0;
@@ -134,7 +132,6 @@
             animation: floatOrb 6s ease-in-out infinite;
         }
 
-        /* Page Loading Overlay */
         #page-loader {
             position: fixed;
             inset: 0;
@@ -183,16 +180,14 @@
                 </div>
             </a>
 
-            <!-- Navigation Menu (Desktop) -->
-            <nav class="hidden md:flex items-center gap-5 text-sm font-semibold">
-                <a href="#" onclick="switchPage('home', event)" class="nav-link text-indigo-600 dark:text-indigo-400 font-bold transition-colors" data-target="home">Home</a>
-                <a href="#" onclick="switchPage('products', event)" class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" data-target="products">Katalog</a>
-                <a href="#" onclick="switchPage('proof', event)" class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" data-target="proof">Bukti Testimoni</a>
-                <a href="#" onclick="switchPage('reseller', event)" class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" data-target="reseller">Reseller</a>
-                <a href="#" onclick="switchPage('affiliate', event)" class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors flex items-center gap-1" data-target="affiliate">
-                    <i class="fa-solid fa-fire text-xs text-amber-500"></i> Penawaran
-                </a>
-                <a href="#" onclick="switchPage('faq', event)" class="nav-link text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" data-target="faq">FAQ</a>
+            <!-- Navigation Menu (Desktop) - Lebih Rapi & Profesional -->
+            <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
+                <a href="#" onclick="switchPage('home', event)" class="nav-link px-4 py-2 rounded-xl text-indigo-600 dark:text-indigo-400 font-bold transition-all flex items-center gap-2" data-target="home"><i class="fa-solid fa-house text-xs"></i> Beranda</a>
+                <a href="#" onclick="switchPage('products', event)" class="nav-link px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-2" data-target="products"><i class="fa-solid fa-bag-shopping text-xs"></i> Katalog Apps</a>
+                <a href="#" onclick="switchPage('proof', event)" class="nav-link px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-2" data-target="proof"><i class="fa-solid fa-star text-xs"></i> Testimoni</a>
+                <a href="#" onclick="switchPage('reseller', event)" class="nav-link px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-2" data-target="reseller"><i class="fa-solid fa-user-tie text-xs"></i> Reseller</a>
+                <a href="#" onclick="switchPage('affiliate', event)" class="nav-link px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-2" data-target="affiliate"><i class="fa-solid fa-fire text-xs text-amber-500"></i> Penawaran</a>
+                <a href="#" onclick="switchPage('faq', event)" class="nav-link px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-2" data-target="faq"><i class="fa-solid fa-circle-question text-xs"></i> FAQ</a>
             </nav>
 
             <div class="flex items-center gap-2.5">
@@ -213,24 +208,25 @@
                     <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Admin
                 </a>
 
-                <!-- Mobile Menu Button (Garis Tiga) -->
-                <button id="menu-btn" class="md:hidden text-slate-700 dark:text-slate-200 hover:text-indigo-600 focus:outline-none text-xl p-2.5 rounded-2xl clean-panel">
+                <!-- Mobile Menu Button (Garis Tiga yang Super Rapi) -->
+                <button id="menu-btn" class="md:hidden text-slate-700 dark:text-slate-200 hover:text-indigo-600 focus:outline-none text-xl p-2.5 rounded-2xl clean-panel" title="Menu Navigasi">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden clean-panel border-t border-slate-200 dark:border-slate-800 px-6 py-6 space-y-4 shadow-2xl">
-            <a href="#" onclick="switchPage('home', event); toggleMobileMenu();" class="block text-indigo-600 dark:text-indigo-400 font-bold">Home</a>
-            <a href="#" onclick="switchPage('products', event); toggleMobileMenu();" class="block text-slate-700 dark:text-slate-300 hover:text-indigo-600 font-semibold">Katalog Produk</a>
-            <a href="#" onclick="switchPage('proof', event); toggleMobileMenu();" class="block text-slate-700 dark:text-slate-300 hover:text-indigo-600 font-semibold">Bukti Testimoni</a>
-            <a href="#" onclick="switchPage('reseller', event); toggleMobileMenu();" class="block text-slate-700 dark:text-slate-300 hover:text-indigo-600 font-semibold">Gabung Reseller</a>
-            <a href="#" onclick="switchPage('affiliate', event); toggleMobileMenu();" class="block text-slate-700 dark:text-slate-300 hover:text-indigo-600 font-semibold flex items-center gap-1.5"><i class="fa-solid fa-fire text-amber-500"></i> Afiliasi & Penawaran</a>
-            <a href="#" onclick="switchPage('faq', event); toggleMobileMenu();" class="block text-slate-700 dark:text-slate-300 hover:text-indigo-600 font-semibold">FAQ</a>
+        <!-- Mobile Menu Dropdown - Sangat Rapi & Terstruktur -->
+        <div id="mobile-menu" class="hidden md:hidden clean-panel border-t border-slate-200 dark:border-slate-800 px-6 py-6 space-y-3 shadow-2xl">
+            <div class="text-[10px] uppercase font-extrabold text-slate-400 tracking-wider mb-2">Navigasi Utama</div>
+            <a href="#" onclick="switchPage('home', event); toggleMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 font-bold text-sm"><i class="fa-solid fa-house w-5"></i> Beranda</a>
+            <a href="#" onclick="switchPage('products', event); toggleMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-sm transition"><i class="fa-solid fa-bag-shopping w-5 text-indigo-500"></i> Katalog Apps Premium</a>
+            <a href="#" onclick="switchPage('proof', event); toggleMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-sm transition"><i class="fa-solid fa-star w-5 text-amber-500"></i> Bukti Testimoni</a>
+            <a href="#" onclick="switchPage('reseller', event); toggleMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-sm transition"><i class="fa-solid fa-user-tie w-5 text-emerald-500"></i> Gabung Reseller</a>
+            <a href="#" onclick="switchPage('affiliate', event); toggleMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-sm transition"><i class="fa-solid fa-fire w-5 text-rose-500"></i> Afiliasi & Penawaran</a>
+            <a href="#" onclick="switchPage('faq', event); toggleMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-semibold text-sm transition"><i class="fa-solid fa-circle-question w-5 text-sky-500"></i> FAQ / Bantuan</a>
             <div class="pt-4 border-t border-slate-100 dark:border-slate-800">
-                <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store" target="_blank" class="w-full py-3 rounded-xl bg-indigo-600 text-white text-sm font-bold flex items-center justify-center gap-2 shadow-md">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp Admin
+                <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store" target="_blank" class="w-full py-3.5 rounded-xl bg-indigo-600 text-white text-sm font-bold flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Admin
                 </a>
             </div>
         </div>
@@ -253,7 +249,7 @@
                 </h1>
             </div>
 
-            <!-- QUICK SHARE STORE BUTTON (NEW FEATURE #3) -->
+            <!-- QUICK SHARE STORE BUTTON -->
             <div class="animate-hero-entrance [animation-delay:100ms] flex justify-center">
                 <button onclick="copyStoreLink()" class="px-5 py-2.5 rounded-2xl clean-panel text-xs font-bold text-slate-700 dark:text-slate-200 hover:border-indigo-500 transition flex items-center gap-2 shadow-sm">
                     <i class="fa-solid fa-share-nodes text-indigo-600 dark:text-indigo-400"></i>
@@ -303,178 +299,197 @@
             <!-- Tombol Navigasi Utama -->
             <div class="animate-hero-entrance [animation-delay:400ms] flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
                 <button onclick="switchPage('products')" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-indigo-600 text-white font-bold text-sm shadow-xl shadow-indigo-600/30 hover:bg-indigo-700 hover:scale-105 transition-all duration-300 flex items-center justify-center gap-3">
-                    <span>Jelajahi Katalog Produk</span>
+                    <span>Jelajahi Katalog Apps</span>
                     <i class="fa-solid fa-arrow-right text-xs"></i>
                 </button>
             </div>
         </section>
 
-        <!-- 2. PRODUCTS PAGE -->
+        <!-- 2. PRODUCTS PAGE (DISAMAKAN 100% SESUAI GAMBAR) -->
         <section id="page-products" class="page-section space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-3">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Katalog Produk Pilihan</h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm">Pilih produk digital & langganan premium sesuai kebutuhan Anda.</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Katalog Apps Premium</h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Pilih aplikasi dan durasi paket sesuai gambar store resmi Reiyux Store.</p>
             </div>
 
             <!-- Search Bar -->
             <div class="max-w-2xl mx-auto space-y-4">
                 <div class="relative">
                     <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-slate-400"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Cari aplikasi (Spotify, Canva, Netflix, dll)..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl clean-panel text-slate-900 dark:text-white text-xs sm:text-sm focus:border-indigo-600 focus:outline-none">
+                    <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Cari aplikasi (Alight Motion, Spotify, Netflix, dll)..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl clean-panel text-slate-900 dark:text-white text-xs sm:text-sm focus:border-indigo-600 focus:outline-none">
                 </div>
             </div>
 
-            <!-- Product Grid -->
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- 1. Spotify -->
-                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="spotify premium">
-                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 text-[10px] font-bold uppercase">Terlaris</span></div>
+            <!-- Product Grid (Persis Sesuai Gambar) -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- 1. Alight Motion -->
+                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="alight motion">
+                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 text-[10px] font-bold uppercase">1 Tahun Private</span></div>
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-6 shadow-sm p-2"><i class="fa-brands fa-spotify"></i></div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Spotify Premium</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Tanpa iklan, bebas skip, kualitas audio tertinggi, akun legal 1 Bulan.</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-baseline gap-2"><span class="text-xs text-slate-400 dark:text-slate-500 line-through">Rp 55.000</span><span class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 20.000</span></div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Spotify Premium', 20000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Spotify%20Premium" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Canva -->
-                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="canva pro team">
-                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 text-[10px] font-bold uppercase">Pro Team</span></div>
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-sky-50 dark:bg-sky-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
-                            <img src="https://i.ibb.co.com/W49q28pT/Canva.png" alt="Canva Logo" class="w-full h-full object-contain rounded-xl" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80'">
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Canva Pro Team</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Template premium tak terbatas, hapus background, cloud besar (1 Tahun).</p>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-baseline gap-2"><span class="text-xs text-slate-400 dark:text-slate-500 line-through">Rp 120.000</span><span class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 5.000</span></div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Canva Pro Team', 5000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Canva%20Pro" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Alight Motion -->
-                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="alight motion pro">
-                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800 text-[10px] font-bold uppercase">Editor</span></div>
-                    <div>
-                        <div class="w-14 h-14 rounded-2xl bg-purple-50 dark:bg-purple-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
                             <img src="https://i.ibb.co.com/KjkG1VhV/Alight-Motion.png" alt="Alight Motion Logo" class="w-full h-full object-contain rounded-xl" onerror="this.src='https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=150&q=80'">
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Alight Motion Pro</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Buka semua efek visual pro, tanpa watermark, preset melimpah 1 Bulan.</p>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Alight Motion Pro</h3>
+                        <p class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mb-4">1 Tahun Private</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Akses penuh efek visual pro, tanpa watermark, durasi panjang 1 Tahun.</p>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex items-baseline gap-2"><span class="text-xs text-slate-400 dark:text-slate-500 line-through">Rp 45.000</span><span class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 10.000</span></div>
+                        <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 10.000</div>
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Alight Motion Pro', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Alight%20Motion%20Pro" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                            <button onclick="addToCart('Alight Motion (1 Tahun Private)', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Alight%20Motion%201%20Tahun%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Spotify -->
+                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="spotify premium">
+                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 text-[10px] font-bold uppercase">1 Bulan Private</span></div>
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-2xl mb-6 shadow-sm p-2"><i class="fa-brands fa-spotify"></i></div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Spotify Premium</h3>
+                        <p class="text-xs text-emerald-600 dark:text-emerald-400 font-bold mb-4">1 Bulan Private</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Bebas iklan, skip tak terbatas, kualitas audio jernih, akun pribadi (Private).</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 20.000</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="addToCart('Spotify Premium (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Spotify%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Canva -->
+                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="canva pro">
+                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 text-[10px] font-bold uppercase">1 Bulan Private</span></div>
+                    <div>
+                        <div class="w-16 h-16 rounded-2xl bg-sky-50 dark:bg-sky-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
+                            <img src="https://i.ibb.co.com/W49q28pT/Canva.png" alt="Canva Logo" class="w-full h-full object-contain rounded-xl" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=150&q=80'">
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Canva Pro</h3>
+                        <p class="text-xs text-sky-600 dark:text-sky-400 font-bold mb-4">1 Bulan Private</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Akses template desain premium lengkap, hapus background otomatis.</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 5.000</div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="addToCart('Canva Pro (1 Bulan Private)', 5000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Canva%20Pro%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 4. Netflix -->
-                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="netflix premium uhd">
-                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800 text-[10px] font-bold uppercase">Ultra HD</span></div>
+                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="netflix">
+                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800 text-[10px] font-bold uppercase">1 Bulan SemiPrivate</span></div>
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-rose-50 dark:bg-rose-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
+                        <div class="w-16 h-16 rounded-2xl bg-rose-50 dark:bg-rose-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
                             <img src="https://i.ibb.co.com/k6zwHLWV/Netflix.png" alt="Netflix Logo" class="w-full h-full object-contain rounded-xl" onerror="this.src='https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?auto=format&fit=crop&w=150&q=80'">
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Netflix Premium UHD</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Nonton film & series kualitas 4K HDR, anti onhold, garansi penuh 1 Bulan.</p>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Netflix Premium</h3>
+                        <p class="text-xs text-rose-600 dark:text-rose-400 font-bold mb-4">1 Bulan SemiPrivate</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Nonton film & series kualitas Ultra HD 4K, anti kendala, garansi aman.</p>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex items-baseline gap-2"><span class="text-xs text-slate-400 dark:text-slate-500 line-through">Rp 120.000</span><span class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Tanya Admin</span></div>
+                        <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 35.000</div>
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Netflix Premium UHD', 0)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Netflix%20Premium" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                            <button onclick="addToCart('Netflix Premium (1 Bulan SemiPrivate)', 35000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Netflix%201%20Bulan%20SemiPrivate" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 5. CapCut -->
                 <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="capcut pro">
-                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 text-[10px] font-bold uppercase">Video Pro</span></div>
+                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 text-[10px] font-bold uppercase">1 Bulan Private</span></div>
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
                             <img src="https://i.ibb.co.com/Wpxd3xf8/CapCut.png" alt="CapCut Logo" class="w-full h-full object-contain rounded-xl" onerror="this.src='https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=150&q=80'">
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">CapCut Pro</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Buka semua efek pro, template eksklusif, transisi mewah, fitur AI 1 Bulan.</p>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">CapCut Pro</h3>
+                        <p class="text-xs text-indigo-600 dark:text-indigo-400 font-bold mb-4">1 Bulan Private</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Buka efek visual pro, transisi eksklusif, dan fitur AI editor mutakhir.</p>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex items-baseline gap-2"><span class="text-xs text-slate-400 dark:text-slate-500 line-through">Rp 80.000</span><span class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 20.000</span></div>
+                        <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 23.000</div>
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('CapCut Pro', 20000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20CapCut%20Pro" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                            <button onclick="addToCart('CapCut Pro (1 Bulan Private)', 23000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20CapCut%20Pro%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 6. YouTube -->
                 <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="youtube premium">
-                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-red-50 dark:bg-red-950/60 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800 text-[10px] font-bold uppercase">Garansi</span></div>
+                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-red-50 dark:bg-red-950/60 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800 text-[10px] font-bold uppercase">1 Bulan Private</span></div>
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-red-50 dark:bg-red-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
+                        <div class="w-16 h-16 rounded-2xl bg-red-50 dark:bg-red-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
                             <img src="https://i.ibb.co.com/8nH6jXWN/YouTube-logo.png" alt="YouTube Logo" class="w-full h-full object-contain rounded-xl">
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">YouTube Premium</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Nonton video bebas iklan total, putar di latar belakang, YouTube Music 1 Bulan.</p>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">YouTube Premium</h3>
+                        <p class="text-xs text-red-600 dark:text-red-400 font-bold mb-4">1 Bulan Private</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Nonton video bebas iklan total, putar di latar belakang, bonus YT Music.</p>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex items-baseline gap-2"><span class="text-xs text-slate-400 dark:text-slate-500 line-through">Rp 65.000</span><span class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 10.000</span></div>
+                        <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 10.000</div>
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('YouTube Premium', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20YouTube%20Premium" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                            <button onclick="addToCart('YouTube Premium (1 Bulan Private)', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20YouTube%20Premium%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 7. Wink -->
                 <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="wink vip">
-                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-pink-50 dark:bg-pink-950/60 text-pink-600 dark:text-pink-400 border border-pink-200 dark:border-pink-800 text-[10px] font-bold uppercase">AI Enhancer</span></div>
+                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-pink-50 dark:bg-pink-950/60 text-pink-600 dark:text-pink-400 border border-pink-200 dark:border-pink-800 text-[10px] font-bold uppercase">1 Bulan Private</span></div>
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-pink-50 dark:bg-pink-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
+                        <div class="w-16 h-16 rounded-2xl bg-pink-50 dark:bg-pink-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
                             <img src="https://i.ibb.co.com/V7gBhdR/Wink-logo.png" alt="Wink Logo" class="w-full h-full object-contain rounded-xl">
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Wink VIP</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Aplikasi AI perbaikan kualitas video buram, jernihkan wajah, stabilkan video 1 Bulan.</p>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Wink VIP</h3>
+                        <p class="text-xs text-pink-600 dark:text-pink-400 font-bold mb-4">1 Bulan Private</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Aplikasi AI perbaikan kualitas video buram, jernihkan wajah, stabilkan video.</p>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex items-baseline gap-2"><span class="text-xs text-slate-400 dark:text-slate-500 line-through">Rp 50.000</span><span class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 10.000</span></div>
+                        <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 20.000</div>
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Wink VIP', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Wink%20VIP" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                            <button onclick="addToCart('Wink VIP (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Wink%20VIP%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
 
                 <!-- 8. ChatGPT -->
-                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="chatgpt plus">
-                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 text-[10px] font-bold uppercase">AI Leader</span></div>
+                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="chatgpt">
+                    <div class="absolute top-4 right-4"><span class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-[10px] font-bold uppercase">Coming Soon</span></div>
                     <div>
-                        <div class="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
+                        <div class="w-16 h-16 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 shadow-sm overflow-hidden p-2">
                             <img src="https://i.ibb.co.com/mVJsvjF0/ChatGPT-logo.png" alt="ChatGPT Logo" class="w-full h-full object-contain rounded-xl">
                         </div>
-                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">ChatGPT Plus</h3>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Akses prioritas GPT-4o, DALL-E 3, analisis data tingkat lanjut, respon cepat.</p>
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">ChatGPT Plus</h3>
+                        <p class="text-xs text-slate-500 font-bold mb-4">Coming Soon</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">Akses AI pintar versi plus dengan fitur analisis data tingkat lanjut.</p>
                     </div>
                     <div class="space-y-3">
-                        <div class="flex items-baseline gap-2"><span class="text-xs text-slate-400 dark:text-slate-500 line-through">Rp 300.000</span><span class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Tanya Admin</span></div>
+                        <div class="text-xl font-extrabold text-slate-400">Rp Kosong</div>
                         <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('ChatGPT Plus', 0)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20ChatGPT%20Plus" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                            <button disabled class="py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-400 text-xs font-bold cursor-not-allowed flex items-center justify-center gap-1.5"><i class="fa-solid fa-ban"></i> Kosong</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20apakah%20ChatGPT%20Plus%20sudah%20ready?" target="_blank" class="py-2.5 rounded-xl bg-slate-800 dark:bg-slate-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-slate-900 transition"><span>Tanya</span> <i class="fa-brands fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>
+
+                <!-- 9. 100% Aman Card (Sesuai Gambar Pojok Kiri Bawah) -->
+                <div class="product-card clean-panel rounded-3xl p-6 flex flex-col items-center justify-center text-center relative group bg-gradient-to-tr from-indigo-500/5 to-emerald-500/5">
+                    <div class="w-20 h-20 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl mb-4 shadow-md">
+                        <i class="fa-solid fa-shield-halved animate-bounce"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-slate-900 dark:text-white mb-2">100% Aman & Bergaransi</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed max-w-xs">Seluruh transaksi di Reiyux Store dijamin aman, legal, dan dikawal garansi penuh selama masa aktif.</p>
+                </div>
+
             </div>
         </section>
 
@@ -722,14 +737,12 @@
             }
         }
 
-        // Initialize Theme from localStorage
         if (localStorage.getItem('reiyux_theme') === 'dark') {
             document.documentElement.classList.add('dark');
             document.getElementById('theme-icon').classList.remove('fa-moon');
             document.getElementById('theme-icon').classList.add('fa-sun');
         }
 
-        // Quick Share / Copy Store Link Logic
         function copyStoreLink() {
             navigator.clipboard.writeText(window.location.href);
             const textEl = document.getElementById('share-btn-text');
@@ -739,7 +752,6 @@
             }, 2500);
         }
 
-        // Page Switching with Loading Animation
         function switchPage(pageId, event) {
             if (event) event.preventDefault();
             
@@ -767,7 +779,6 @@
             }, 350); 
         }
 
-        // Mobile Menu Toggle (Garis Tiga)
         const mobileMenuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         if(mobileMenuBtn && mobileMenu) {
@@ -779,7 +790,6 @@
             if(mobileMenu) mobileMenu.classList.add('hidden');
         }
 
-        // Cart System
         let cart = [];
         function addToCart(productName, price) {
             cart.push({ name: productName, price: price });
@@ -836,7 +846,6 @@
             window.open(`https://wa.me/6283165869029?text=${encodeURIComponent(text)}`, '_blank');
         }
 
-        // Search Filter
         function filterProducts() {
             const query = document.getElementById('searchInput').value.toLowerCase();
             document.querySelectorAll('#product-grid .product-card').forEach(card => {
@@ -844,7 +853,6 @@
             });
         }
 
-        // FAQ Accordion
         document.querySelectorAll('.faq-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 btn.nextElementSibling.classList.toggle('hidden');
