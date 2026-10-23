@@ -180,7 +180,7 @@
                 </div>
             </a>
 
-            <!-- Navigation Menu (Desktop) - Lebih Rapi & Profesional -->
+            <!-- Navigation Menu (Desktop) -->
             <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
                 <a href="#" onclick="switchPage('home', event)" class="nav-link px-4 py-2 rounded-xl text-indigo-600 dark:text-indigo-400 font-bold transition-all flex items-center gap-2" data-target="home"><i class="fa-solid fa-house text-xs"></i> Beranda</a>
                 <a href="#" onclick="switchPage('products', event)" class="nav-link px-4 py-2 rounded-xl text-slate-600 dark:text-slate-300 hover:text-indigo-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center gap-2" data-target="products"><i class="fa-solid fa-bag-shopping text-xs"></i> Katalog Apps</a>
@@ -208,14 +208,14 @@
                     <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Admin
                 </a>
 
-                <!-- Mobile Menu Button (Garis Tiga yang Super Rapi) -->
+                <!-- Mobile Menu Button -->
                 <button id="menu-btn" class="md:hidden text-slate-700 dark:text-slate-200 hover:text-indigo-600 focus:outline-none text-xl p-2.5 rounded-2xl clean-panel" title="Menu Navigasi">
                     <i class="fa-solid fa-bars"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown - Sangat Rapi & Terstruktur -->
+        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden clean-panel border-t border-slate-200 dark:border-slate-800 px-6 py-6 space-y-3 shadow-2xl">
             <div class="text-[10px] uppercase font-extrabold text-slate-400 tracking-wider mb-2">Navigasi Utama</div>
             <a href="#" onclick="switchPage('home', event); toggleMobileMenu();" class="flex items-center gap-3 px-4 py-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 font-bold text-sm"><i class="fa-solid fa-house w-5"></i> Beranda</a>
@@ -275,7 +275,7 @@
             <div class="animate-hero-entrance [animation-delay:300ms] pt-2 text-left space-y-6">
                 <div class="text-center space-y-2">
                     <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">Cara Order</h3>
-                    <p class="text-xs text-slate-600 dark:text-slate-400">Silakan tanya dulu stoknya dan tunggu admin proses ya, gak lama kok!</p>
+                    <p class="text-xs text-slate-600 dark:text-slate-400">Silakan bayar lewat web (DANA/QRIS), lalu konfirmasi pesanan ke WhatsApp admin!</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="clean-panel p-6 rounded-2xl space-y-3">
@@ -285,13 +285,13 @@
                     </div>
                     <div class="clean-panel p-6 rounded-2xl space-y-3">
                         <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-extrabold flex items-center justify-center">2</div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-sm">Tanya Stok & Admin Proses</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Kalian tanya dulu stoknya dan tunggu admin proses ya, gak lama sih.</p>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm">Bayar via DANA/QRIS</h4>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Lakukan pembayaran melalui scan QRIS resmi atau transfer nomor DANA toko.</p>
                     </div>
                     <div class="clean-panel p-6 rounded-2xl space-y-3">
                         <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 font-extrabold flex items-center justify-center">3</div>
                         <h4 class="font-bold text-slate-900 dark:text-white text-sm">Akun Dikirim</h4>
-                        <p class="text-xs text-slate-600 dark:text-slate-400">Setelah beres, akun langsung dikirim dan siap digunakan!</p>
+                        <p class="text-xs text-slate-600 dark:text-slate-400">Kirim konfirmasi ke WhatsApp, admin langsung proses dan kirim akunnya!</p>
                     </div>
                 </div>
             </div>
@@ -305,11 +305,11 @@
             </div>
         </section>
 
-        <!-- 2. PRODUCTS PAGE (DISAMAKAN 100% SESUAI GAMBAR) -->
+        <!-- 2. PRODUCTS PAGE -->
         <section id="page-products" class="page-section space-y-8">
             <div class="text-center max-w-2xl mx-auto space-y-3">
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">Katalog Apps Premium</h2>
-                <p class="text-slate-600 dark:text-slate-400 text-sm">Pilih aplikasi dan durasi paket sesuai gambar store resmi Reiyux Store.</p>
+                <p class="text-slate-600 dark:text-slate-400 text-sm">Pilih aplikasi, masukkan keranjang, beli langsung, atau tanya admin via WhatsApp.</p>
             </div>
 
             <!-- Search Bar -->
@@ -320,7 +320,7 @@
                 </div>
             </div>
 
-            <!-- Product Grid (Persis Sesuai Gambar) -->
+            <!-- Product Grid -->
             <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 
                 <!-- 1. Alight Motion -->
@@ -336,9 +336,10 @@
                     </div>
                     <div class="space-y-3">
                         <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 10.000</div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Alight Motion (1 Tahun Private)', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Alight%20Motion%201%20Tahun%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        <div class="grid grid-cols-3 gap-1.5">
+                            <button onclick="addToCart('Alight Motion (1 Tahun Private)', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
+                            <button onclick="openCheckoutModal('Alight Motion (1 Tahun Private)', 10000)" class="py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-solid fa-bag-shopping"></i> Beli</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20tanya%20stok%20Alight%20Motion%201%20Tahun%20Private" target="_blank" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-brands fa-whatsapp"></i> Tanya</a>
                         </div>
                     </div>
                 </div>
@@ -354,9 +355,10 @@
                     </div>
                     <div class="space-y-3">
                         <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 20.000</div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Spotify Premium (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Spotify%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        <div class="grid grid-cols-3 gap-1.5">
+                            <button onclick="addToCart('Spotify Premium (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
+                            <button onclick="openCheckoutModal('Spotify Premium (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-solid fa-bag-shopping"></i> Beli</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20tanya%20stok%20Spotify%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-brands fa-whatsapp"></i> Tanya</a>
                         </div>
                     </div>
                 </div>
@@ -374,9 +376,10 @@
                     </div>
                     <div class="space-y-3">
                         <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 5.000</div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Canva Pro (1 Bulan Private)', 5000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Canva%20Pro%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        <div class="grid grid-cols-3 gap-1.5">
+                            <button onclick="addToCart('Canva Pro (1 Bulan Private)', 5000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
+                            <button onclick="openCheckoutModal('Canva Pro (1 Bulan Private)', 5000)" class="py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-solid fa-bag-shopping"></i> Beli</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20tanya%20stok%20Canva%20Pro%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-brands fa-whatsapp"></i> Tanya</a>
                         </div>
                     </div>
                 </div>
@@ -394,9 +397,10 @@
                     </div>
                     <div class="space-y-3">
                         <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 35.000</div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Netflix Premium (1 Bulan SemiPrivate)', 35000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Netflix%201%20Bulan%20SemiPrivate" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        <div class="grid grid-cols-3 gap-1.5">
+                            <button onclick="addToCart('Netflix Premium (1 Bulan SemiPrivate)', 35000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
+                            <button onclick="openCheckoutModal('Netflix Premium (1 Bulan SemiPrivate)', 35000)" class="py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-solid fa-bag-shopping"></i> Beli</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20tanya%20stok%20Netflix%201%20Bulan%20SemiPrivate" target="_blank" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-brands fa-whatsapp"></i> Tanya</a>
                         </div>
                     </div>
                 </div>
@@ -414,9 +418,10 @@
                     </div>
                     <div class="space-y-3">
                         <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 23.000</div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('CapCut Pro (1 Bulan Private)', 23000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20CapCut%20Pro%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        <div class="grid grid-cols-3 gap-1.5">
+                            <button onclick="addToCart('CapCut Pro (1 Bulan Private)', 23000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
+                            <button onclick="openCheckoutModal('CapCut Pro (1 Bulan Private)', 23000)" class="py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-solid fa-bag-shopping"></i> Beli</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20tanya%20stok%20CapCut%20Pro%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-brands fa-whatsapp"></i> Tanya</a>
                         </div>
                     </div>
                 </div>
@@ -434,9 +439,10 @@
                     </div>
                     <div class="space-y-3">
                         <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 10.000</div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('YouTube Premium (1 Bulan Private)', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20YouTube%20Premium%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        <div class="grid grid-cols-3 gap-1.5">
+                            <button onclick="addToCart('YouTube Premium (1 Bulan Private)', 10000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
+                            <button onclick="openCheckoutModal('YouTube Premium (1 Bulan Private)', 10000)" class="py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-solid fa-bag-shopping"></i> Beli</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20tanya%20stok%20YouTube%20Premium%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-brands fa-whatsapp"></i> Tanya</a>
                         </div>
                     </div>
                 </div>
@@ -454,9 +460,10 @@
                     </div>
                     <div class="space-y-3">
                         <div class="text-xl font-extrabold text-indigo-600 dark:text-indigo-400">Rp 20.000</div>
-                        <div class="grid grid-cols-2 gap-2">
-                            <button onclick="addToCart('Wink VIP (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 dark:hover:bg-indigo-900 text-indigo-600 dark:text-indigo-400 text-xs font-bold transition flex items-center justify-center gap-1.5"><i class="fa-solid fa-cart-plus"></i> +Keranjang</button>
-                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20membeli%20Wink%20VIP%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-indigo-600 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm hover:bg-indigo-700 transition"><span>Beli</span> <i class="fa-brands fa-whatsapp"></i></a>
+                        <div class="grid grid-cols-3 gap-1.5">
+                            <button onclick="addToCart('Wink VIP (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 hover:bg-indigo-100 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
+                            <button onclick="openCheckoutModal('Wink VIP (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-solid fa-bag-shopping"></i> Beli</button>
+                            <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20tanya%20stok%20Wink%20VIP%201%20Bulan%20Private" target="_blank" class="py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-bold transition flex items-center justify-center gap-1 shadow-sm"><i class="fa-brands fa-whatsapp"></i> Tanya</a>
                         </div>
                     </div>
                 </div>
@@ -481,7 +488,7 @@
                     </div>
                 </div>
 
-                <!-- 9. 100% Aman Card (Sesuai Gambar Pojok Kiri Bawah) -->
+                <!-- 9. 100% Aman Card -->
                 <div class="product-card clean-panel rounded-3xl p-6 flex flex-col items-center justify-center text-center relative group bg-gradient-to-tr from-indigo-500/5 to-emerald-500/5">
                     <div class="w-20 h-20 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-3xl mb-4 shadow-md">
                         <i class="fa-solid fa-shield-halved animate-bounce"></i>
@@ -641,7 +648,7 @@
                         <i class="fa-solid fa-chevron-down text-indigo-600 dark:text-indigo-400 transition-transform"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Pilih produk di katalog, tanyakan stoknya, lalu admin akan segera memproses pesanan Anda via WhatsApp (+6283165869029).
+                        Pilih produk, bayar via DANA/QRIS, lalu konfirmasikan pesanan Anda ke WhatsApp admin (+6283165869029).
                     </div>
                 </div>
                 <div class="clean-panel rounded-2xl overflow-hidden">
@@ -659,13 +666,84 @@
                         <i class="fa-solid fa-chevron-down text-indigo-600 dark:text-indigo-400 transition-transform"></i>
                     </button>
                     <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Pengiriman sangat cepat! Biasanya hanya membutuhkan waktu 1 sampai 5 menit setelah pembayaran Anda terverifikasi oleh admin.
+                        Pengiriman sangat cepat! Biasanya hanya membutuhkan waktu 1 sampai 5 menit setelah pembayaran Anda diverifikasi.
                     </div>
                 </div>
             </div>
         </section>
 
     </main>
+
+    <!-- CHECKOUT / PEMBAYARAN MODAL (DANA & QRIS ONLY) -->
+    <div id="checkoutModal" class="fixed inset-0 bg-slate-900/70 backdrop-blur-sm z-50 flex items-center justify-center hidden p-4">
+        <div class="w-full max-w-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-300 hover:text-slate-900 flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-md"><i class="fa-solid fa-wallet"></i></div>
+                    <div>
+                        <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">Checkout Pembayaran</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Pilih metode pembayaran pilihan Anda</p>
+                    </div>
+                </div>
+
+                <!-- Detail Pesanan -->
+                <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-700/80 space-y-2 text-xs">
+                    <div class="flex justify-between"><span class="text-slate-500 dark:text-slate-400">Produk:</span> <span id="modal-product-name" class="font-bold text-slate-900 dark:text-white"></span></div>
+                    <div class="flex justify-between"><span class="text-slate-500 dark:text-slate-400">Total Harga:</span> <span id="modal-product-price" class="font-extrabold text-indigo-600 dark:text-indigo-400 text-sm"></span></div>
+                </div>
+
+                <!-- Pilihan Metode Pembayaran (Hanya DANA & QRIS) -->
+                <div class="space-y-3">
+                    <label class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">Pilih Metode:</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="clean-panel p-3.5 rounded-2xl flex items-center gap-3 cursor-pointer border-2 border-indigo-600 bg-indigo-50/50 dark:bg-indigo-950/30" onclick="selectPayment('QRIS')">
+                            <input type="radio" name="paymentMethod" checked class="text-indigo-600">
+                            <div class="text-xs font-bold text-slate-900 dark:text-white"><i class="fa-solid fa-qrcode text-indigo-600 mr-1.5"></i> QRIS (All QR)</div>
+                        </label>
+                        <label class="clean-panel p-3.5 rounded-2xl flex items-center gap-3 cursor-pointer border border-slate-200 dark:border-slate-700" onclick="selectPayment('DANA')">
+                            <input type="radio" name="paymentMethod" class="text-indigo-600">
+                            <div class="text-xs font-bold text-slate-900 dark:text-white"><i class="fa-solid fa-wallet text-sky-500 mr-1.5"></i> DANA</div>
+                        </label>
+                        <!-- OVO & GoPay Coming Soon -->
+                        <div class="clean-panel p-3.5 rounded-2xl flex items-center gap-3 opacity-50 cursor-not-allowed border border-slate-200 dark:border-slate-700">
+                            <input type="radio" name="paymentMethod" disabled>
+                            <div class="text-xs font-bold text-slate-400">OVO <span class="text-[9px] bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded text-slate-500">Soon</span></div>
+                        </div>
+                        <div class="clean-panel p-3.5 rounded-2xl flex items-center gap-3 opacity-50 cursor-not-allowed border border-slate-200 dark:border-slate-700">
+                            <input type="radio" name="paymentMethod" disabled>
+                            <div class="text-xs font-bold text-slate-400">GoPay <span class="text-[9px] bg-slate-200 dark:bg-slate-700 px-1.5 py-0.5 rounded text-slate-500">Soon</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Pembayaran (QRIS / DANA) -->
+                <div id="payment-info-box" class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center space-y-3">
+                    <div id="qris-content" class="space-y-2">
+                        <p class="text-xs font-bold text-slate-700 dark:text-slate-300">Scan QRIS Resmi Reiyux Store (M Reihan Ramdani)</p>
+                        <!-- Menggunakan Direct Image URL Resmi -->
+                        <div class="w-48 h-48 mx-auto bg-white p-2 rounded-xl shadow-md border">
+                            <img src="https://i.ibb.co.com/5hr36YR8/QRIS.jpg" alt="QRIS Reiyux Store" class="w-full h-full object-contain rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=300&q=80'">
+                        </div>
+                        <p class="text-[10px] text-slate-400">NMID: ID1026566003368 • A01</p>
+                    </div>
+                    <div id="wallet-content" class="space-y-2 hidden">
+                        <p class="text-xs font-bold text-slate-700 dark:text-slate-300">Transfer ke Nomor DANA:</p>
+                        <div class="text-base font-extrabold text-indigo-600 dark:text-indigo-400 bg-white dark:bg-slate-900 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700">0831-6586-9029</div>
+                        <p class="text-[11px] text-slate-500">Atas Nama: <strong class="text-slate-900 dark:text-white">M Reihan Ramdani</strong></p>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <button onclick="finishCheckout()" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-xs shadow-lg shadow-emerald-600/30 transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Konfirmasi Pesanan ke WhatsApp Admin
+                    </button>
+                    <p class="text-[10px] text-center text-slate-400">Setelah transfer, klik tombol di atas untuk mengirim detail pesanan ke WhatsApp.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- FLOATING DRAWER KERANJANG BELANJA -->
     <div id="cartDrawer" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex justify-end hidden">
@@ -689,7 +767,7 @@
                     <span id="cart-total-price" class="text-lg font-extrabold text-indigo-600 dark:text-indigo-400">Rp 0</span>
                 </div>
                 <div class="space-y-2">
-                    <button onclick="checkoutCart()" class="w-full py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-xs shadow-md hover:bg-indigo-700 transition flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp text-base"></i> Checkout ke WhatsApp</button>
+                    <button onclick="checkoutCart()" class="w-full py-3.5 rounded-xl bg-indigo-600 text-white font-bold text-xs shadow-md hover:bg-indigo-700 transition flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp text-base"></i> Checkout Keranjang ke WhatsApp</button>
                     <button onclick="clearCart()" class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 font-semibold text-xs transition">Kosongkan Keranjang</button>
                 </div>
             </div>
@@ -790,6 +868,44 @@
             if(mobileMenu) mobileMenu.classList.add('hidden');
         }
 
+        // Direct Checkout Modal Logic
+        let activeProduct = '';
+        let activePrice = 0;
+        let selectedPaymentMethod = 'QRIS';
+
+        function openCheckoutModal(productName, price) {
+            activeProduct = productName;
+            activePrice = price;
+            document.getElementById('modal-product-name').textContent = productName;
+            document.getElementById('modal-product-price').textContent = 'Rp ' + price.toLocaleString('id-ID');
+            document.getElementById('checkoutModal').classList.remove('hidden');
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function selectPayment(method) {
+            selectedPaymentMethod = method;
+            const qrisBox = document.getElementById('qris-content');
+            const walletBox = document.getElementById('wallet-content');
+
+            if(method === 'QRIS') {
+                qrisBox.classList.remove('hidden');
+                walletBox.classList.add('hidden');
+            } else {
+                qrisBox.classList.add('hidden');
+                walletBox.classList.remove('hidden');
+            }
+        }
+
+        function finishCheckout() {
+            let text = `Halo Reiyux Store, saya ingin memesan produk:\n\n*Produk:* ${activeProduct}\n*Total:* Rp ${activePrice.toLocaleString('id-ID')}\n*Metode Pembayaran:* ${selectedPaymentMethod}\n\nMohon segera diproses ya kak! Terima kasih.`;
+            window.open(`https://wa.me/6283165869029?text=${encodeURIComponent(text)}`, '_blank');
+            closeCheckoutModal();
+        }
+
+        // Cart System
         let cart = [];
         function addToCart(productName, price) {
             cart.push({ name: productName, price: price });
@@ -839,10 +955,10 @@
             let text = "Halo Reiyux Store, saya ingin memesan produk dari keranjang:\n\n";
             let total = 0;
             cart.forEach((item, i) => {
-                text += `${i + 1}. ${item.name} (${item.price > 0 ? 'Rp ' + item.price.toLocaleString('id-ID') : 'Tanya Admin'})\n`;
+                text += `${i + 1}. ${item.name} (${item.price > 0 ? 'Rp ' + item.price.toLocaleString('id-ID') : 'Tergantung Pesanan'})\n`;
                 total += item.price;
             });
-            text += `\nTotal: ${total > 0 ? 'Rp ' + total.toLocaleString('id-ID') : 'Tergantung Pesanan'}`;
+            text += `\nTotal: ${total > 0 ? 'Rp ' + total.toLocaleString('id-ID') : 'Tergantung Pesanan'}\n\nMohon segera diproses ya kak!`;
             window.open(`https://wa.me/6283165869029?text=${encodeURIComponent(text)}`, '_blank');
         }
 
