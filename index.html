@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reiyux Store - Pusat Akun Premium & Digital Hub Terpercaya</title>
+    <title>Reiyux Store — Official Digital Hub</title>
     
     <!-- SEO & OG Meta Tags -->
     <meta name="description" content="Pusat layanan akun aplikasi premium, jasa paid edit, dan CC sinematik terpercaya bergaransi penuh di Reiyux Store.">
-    <meta property="og:title" content="Reiyux Store - Official Digital Hub">
+    <meta property="og:title" content="Reiyux Store — Official Digital Hub">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Plus Jakarta Sans & Cinzel -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Cinzel:wght@700;800&display=swap" rel="stylesheet">
-    <!-- FontAwesome for Icons -->
+    <!-- Google Fonts: Plus Jakarta Sans & Space Grotesk -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <script>
@@ -23,20 +23,14 @@
                 extend: {
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
-                        serif: ['Cinzel', 'serif'],
+                        mono: ['Space Grotesk', 'sans-serif'],
                     },
                     colors: {
-                        gold: {
-                            300: '#fef08a',
-                            400: '#facc15',
-                            500: '#eab308',
-                            600: '#ca8a04',
-                            700: '#a16207',
+                        zinc: {
+                            850: '#121215',
+                            900: '#09090b',
+                            950: '#040405',
                         }
-                    },
-                    boxShadow: {
-                        'gold-glow': '0 0 25px rgba(234, 179, 8, 0.25)',
-                        'gold-lg': '0 10px 35px -5px rgba(234, 179, 8, 0.35)',
                     }
                 }
             }
@@ -44,77 +38,60 @@
     </script>
 
     <style>
+        * { -webkit-tap-highlight-color: transparent; }
+        
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #060911;
-            color: #f8fafc;
+            background-color: #040405;
+            color: #f4f4f5;
             overflow-x: hidden;
+            transform: translateZ(0);
         }
 
-        /* Animated Shimmer Gold Gradient Text for Title */
-        @keyframes textShimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Black & White Premium Glass Panel */
+        .bw-panel {
+            background: rgba(18, 18, 21, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+            will-change: transform;
         }
-        .animated-gold-title {
-            background: linear-gradient(90deg, #fff3b0 0%, #ffd700 25%, #facc15 50%, #ffffff 75%, #a16207 100%);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textShimmer 4s ease infinite;
-        }
-
-        /* Floating Animated Emblem Logo */
-        @keyframes crownFloat {
-            0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 0 15px rgba(234,179,8,0.4)); }
-            50% { transform: translateY(-10px) scale(1.04); filter: drop-shadow(0 0 30px rgba(234,179,8,0.75)); }
-        }
-        .animate-crown-logo {
-            animation: crownFloat 3.5s ease-in-out infinite;
+        .bw-panel:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 10px 30px -5px rgba(255, 255, 255, 0.05);
         }
 
-        /* Metallic Gold Button */
-        .btn-gold {
-            background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
-            color: #060911;
+        /* Pure White Button */
+        .btn-bw {
+            background: #ffffff;
+            color: #040405;
             font-weight: 800;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+            will-change: transform;
         }
-        .btn-gold:hover {
-            box-shadow: 0 0 25px rgba(234, 179, 8, 0.5);
-            transform: translateY(-2px) scale(1.02);
+        .btn-bw:hover {
+            background: #e4e4e7;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
         }
-
-        /* Glassmorphism Gold Panel */
-        .gold-panel {
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(234, 179, 8, 0.2);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .gold-panel:hover {
-            border-color: rgba(234, 179, 8, 0.5);
-            box-shadow: 0 12px 30px -5px rgba(234, 179, 8, 0.15);
+        .btn-bw:active {
+            transform: translateY(0) scale(0.98);
         }
 
-        /* Cyber Circuit Background Grid */
-        .cyber-grid-bg {
+        /* Dark Grid Background */
+        .bw-grid-bg {
             background-image: 
-                radial-gradient(rgba(234, 179, 8, 0.12) 1px, transparent 1px),
-                linear-gradient(to right, rgba(15, 23, 42, 0.85), rgba(6, 9, 17, 0.98));
-            background-size: 32px 32px, 100% 100%;
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
         }
 
-        /* Luxury Gold Emblem Circle */
+        /* Logo Emblem Circle */
         .logo-emblem {
-            position: relative;
             border-radius: 9999px;
             padding: 2px;
-            background: linear-gradient(135deg, #fef08a, #eab308, #854d0e, #fef08a);
-            box-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
-            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff, #71717a, #27272a);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -126,22 +103,45 @@
             height: 100%;
         }
 
-        /* Interactive Card Animations */
-        .product-card { 
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
-            cursor: pointer;
+        /* BESAR & Keren: Animasi Teknologi Hologram & Ring Scanner */
+        @keyframes techSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-        .product-card:hover {
-            transform: translateY(-8px) scale(1.015);
-            border-color: #eab308;
-            box-shadow: 0 20px 40px -10px rgba(234, 179, 8, 0.25);
+        @keyframes techScan {
+            0%, 100% { opacity: 0.3; transform: scale(0.95); }
+            50% { opacity: 0.9; transform: scale(1.05); }
+        }
+        .tech-ring-1 {
+            animation: techSpin 12s linear infinite;
+            will-change: transform;
+        }
+        .tech-ring-2 {
+            animation: techSpin 18s linear reverse infinite;
+            will-change: transform;
+        }
+        .tech-pulse-glow {
+            animation: techScan 3s ease-in-out infinite;
+            will-change: transform, opacity;
         }
 
+        /* Product Cards */
+        .product-card { 
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease; 
+            cursor: pointer;
+            will-change: transform;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Page Transitions */
         .page-section {
             display: none;
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.4s ease, transform 0.4s ease;
+            transform: translateY(12px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
         .page-section.active-page {
             display: block;
@@ -149,485 +149,484 @@
             transform: translateY(0);
         }
 
-        #profileDrawer { transition: opacity 0.3s ease; }
-        #profileDrawerContent { transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1); }
+        /* Drawers & Notifications */
+        #profileDrawer { transition: opacity 0.25s ease; }
+        #profileDrawerContent { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
         #profileDrawer.hidden #profileDrawerContent { transform: translateX(-100%); }
-        #live-toast { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        #live-toast, #cart-toast { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
 
-        /* Smooth Page Loader */
+        /* Loader Spinner */
         #page-loader {
             position: fixed; inset: 0; z-index: 999; display: flex; align-items: center; justify-content: center;
-            background: rgba(6, 9, 17, 0.93); backdrop-filter: blur(12px);
-            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+            background: rgba(4, 4, 5, 0.95); backdrop-filter: blur(8px);
+            opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
         }
         #page-loader.active { opacity: 1; pointer-events: auto; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between cyber-grid-bg selection:bg-amber-500 selection:text-slate-950">
+<body class="min-h-screen flex flex-col justify-between bw-grid-bg selection:bg-white selection:text-black">
 
     <!-- PAGE TRANSITION SPINNER -->
     <div id="page-loader">
         <div class="flex flex-col items-center gap-3">
-            <div class="w-12 h-12 rounded-full border-2 border-amber-500/30 border-t-amber-400 animate-spin flex items-center justify-center shadow-gold-glow">
-                <i class="fa-solid fa-crown text-amber-400 text-sm"></i>
+            <div class="w-10 h-10 rounded-full border-2 border-white/20 border-t-white animate-spin flex items-center justify-center">
+                <i class="fa-solid fa-crown text-white text-xs"></i>
             </div>
-            <span class="text-xs font-bold tracking-widest uppercase text-amber-300">Memuat Reiyux Store...</span>
+            <span class="text-[10px] font-mono tracking-widest uppercase text-zinc-400">Loading Reiyux Store...</span>
         </div>
     </div>
 
     <!-- HEADER / NAVBAR -->
-    <header class="fixed top-0 left-0 right-0 z-40 bg-[#060911]/85 backdrop-blur-xl border-b border-amber-500/20">
+    <header class="fixed top-0 left-0 right-0 z-40 bg-[#040405]/85 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
-            <!-- LOGO EMBLEM ANIMATED -->
-            <button onclick="toggleProfileDrawer()" class="group flex items-center gap-3.5 focus:outline-none text-left" title="Klik untuk lihat Profil Owner">
-                <div class="logo-emblem w-11 h-11 animate-crown-logo bg-slate-900 border border-amber-400">
-                    <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-amber-400 text-lg\'></i>';">
+            <!-- LOGO EMBLEM -->
+            <button onclick="toggleProfileDrawer()" class="group flex items-center gap-3 focus:outline-none text-left" title="Klik untuk lihat Profil Owner">
+                <div class="logo-emblem w-10 h-10 bg-zinc-900 border border-white/20">
+                    <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-white text-sm\'></i>';">
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-lg font-extrabold font-serif tracking-wider animated-gold-title flex items-center gap-1.5">
-                        REIYUX STORE <i class="fa-solid fa-circle-info text-[10px] text-amber-400 opacity-70 group-hover:opacity-100 transition"></i>
+                    <span class="text-base font-bold font-mono tracking-wider text-white flex items-center gap-1.5">
+                        REIYUX STORE <i class="fa-solid fa-circle-check text-[10px] text-zinc-400 opacity-70"></i>
                     </span>
-                    <span class="text-[9px] text-amber-400/80 font-semibold uppercase tracking-widest flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-ping"></span> OFFICIAL DIGITAL HUB
+                    <span class="text-[9px] text-zinc-400 font-mono uppercase tracking-widest flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> OFFICIAL DIGITAL HUB
                     </span>
                 </div>
             </button>
 
             <!-- Navigation Menu -->
-            <nav class="hidden md:flex items-center gap-1 text-sm font-semibold">
-                <a href="#" onclick="switchPage('home', event)" class="nav-link px-3.5 py-2 rounded-xl bg-amber-500/10 text-amber-400 border border-amber-500/30 font-bold transition-all flex items-center gap-1.5" data-target="home"><i class="fa-solid fa-house text-xs"></i> Beranda</a>
-                <a href="#" onclick="switchPage('products', event)" class="nav-link px-3.5 py-2 rounded-xl text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 transition-all flex items-center gap-1.5" data-target="products"><i class="fa-solid fa-gem text-xs"></i> Katalog Apps</a>
-                <a href="#" onclick="switchPage('services', event)" class="nav-link px-3.5 py-2 rounded-xl text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 transition-all flex items-center gap-1.5" data-target="services"><i class="fa-solid fa-wand-magic-sparkles text-xs text-amber-400"></i> Jasa Edit & CC</a>
-                <a href="#" onclick="switchPage('proof', event)" class="nav-link px-3.5 py-2 rounded-xl text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 transition-all flex items-center gap-1.5" data-target="proof"><i class="fa-solid fa-star text-xs"></i> Testimoni</a>
-                <a href="#" onclick="switchPage('reseller', event)" class="nav-link px-3.5 py-2 rounded-xl text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 transition-all flex items-center gap-1.5" data-target="reseller"><i class="fa-solid fa-user-tie text-xs"></i> Reseller</a>
-                <a href="#" onclick="switchPage('faq', event)" class="nav-link px-3.5 py-2 rounded-xl text-slate-300 hover:text-amber-400 hover:bg-slate-800/50 transition-all flex items-center gap-1.5" data-target="faq"><i class="fa-solid fa-circle-question text-xs"></i> FAQ & Order</a>
+            <nav class="hidden md:flex items-center gap-1 text-xs font-medium">
+                <a href="#" onclick="switchPage('home', event)" class="nav-link px-3.5 py-2 rounded-xl bg-white/10 text-white border border-white/20 font-semibold transition-all flex items-center gap-1.5" data-target="home"><i class="fa-solid fa-house text-[10px]"></i> Beranda</a>
+                <a href="#" onclick="switchPage('products', event)" class="nav-link px-3.5 py-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all flex items-center gap-1.5" data-target="products"><i class="fa-solid fa-layer-group text-[10px]"></i> Katalog Apps</a>
+                <a href="#" onclick="switchPage('services', event)" class="nav-link px-3.5 py-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all flex items-center gap-1.5" data-target="services"><i class="fa-solid fa-wand-magic-sparkles text-[10px]"></i> Jasa Edit & CC</a>
+                <a href="#" onclick="switchPage('proof', event)" class="nav-link px-3.5 py-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all flex items-center gap-1.5" data-target="proof"><i class="fa-solid fa-star text-[10px]"></i> Testimoni</a>
+                <a href="#" onclick="switchPage('reseller', event)" class="nav-link px-3.5 py-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all flex items-center gap-1.5" data-target="reseller"><i class="fa-solid fa-user-tie text-[10px]"></i> Reseller</a>
+                <a href="#" onclick="switchPage('faq', event)" class="nav-link px-3.5 py-2 rounded-xl text-zinc-400 hover:text-white hover:bg-zinc-800/50 transition-all flex items-center gap-1.5" data-target="faq"><i class="fa-solid fa-circle-question text-[10px]"></i> FAQ & Order</a>
             </nav>
 
             <div class="flex items-center gap-3">
-                <button onclick="toggleCartDrawer()" class="relative px-4 py-2.5 rounded-2xl gold-panel text-amber-400 hover:bg-amber-500/10 transition flex items-center gap-2 shadow-sm">
-                    <i class="fa-solid fa-cart-shopping text-sm"></i>
-                    <span class="text-xs font-bold hidden sm:inline">Keranjang</span>
-                    <span id="cart-badge" class="absolute -top-2 -right-2 bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-extrabold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shadow-lg animate-bounce">0</span>
+                <button onclick="toggleCartDrawer()" class="relative px-4 py-2.5 rounded-xl bw-panel text-white hover:bg-white/10 transition flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-xs"></i>
+                    <span class="text-xs font-semibold hidden sm:inline">Keranjang</span>
+                    <span id="cart-badge" class="bg-white text-black font-mono font-extrabold text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
                 </button>
 
-                <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20pesan%20aplikasi" target="_blank" class="hidden sm:flex px-4 py-2.5 rounded-2xl btn-gold text-xs font-extrabold items-center gap-2 shadow-gold-glow">
+                <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20pesan%20aplikasi" target="_blank" class="hidden sm:flex px-4 py-2.5 rounded-xl btn-bw text-xs font-bold items-center gap-2">
                     <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Admin
                 </a>
 
-                <button id="menu-btn" class="md:hidden text-amber-400 p-2.5 rounded-2xl gold-panel" title="Menu Navigasi">
-                    <i class="fa-solid fa-bars text-lg"></i>
+                <button id="menu-btn" class="md:hidden text-white p-2.5 rounded-xl bw-panel" title="Menu Navigasi">
+                    <i class="fa-solid fa-bars text-base"></i>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden gold-panel border-t border-amber-500/20 px-6 py-6 space-y-3 shadow-2xl">
-            <div class="text-[10px] uppercase font-extrabold text-amber-400/60 tracking-wider mb-2">Navigasi Utama</div>
-            <a href="#" onclick="switchPage('home', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl bg-amber-500/10 text-amber-400 font-bold text-sm" data-target="home"><i class="fa-solid fa-house w-5"></i> Beranda</a>
-            <a href="#" onclick="switchPage('products', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 font-semibold text-sm hover:bg-slate-800/50" data-target="products"><i class="fa-solid fa-gem w-5 text-amber-400"></i> Katalog Apps Premium</a>
-            <a href="#" onclick="switchPage('services', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 font-semibold text-sm hover:bg-slate-800/50" data-target="services"><i class="fa-solid fa-wand-magic-sparkles w-5 text-amber-400"></i> Jasa Edit & Coloring CC</a>
-            <a href="#" onclick="switchPage('proof', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 font-semibold text-sm hover:bg-slate-800/50" data-target="proof"><i class="fa-solid fa-star w-5 text-amber-400"></i> Bukti Testimoni</a>
-            <a href="#" onclick="switchPage('reseller', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 font-semibold text-sm hover:bg-slate-800/50" data-target="reseller"><i class="fa-solid fa-user-tie w-5 text-emerald-400"></i> Gabung Reseller</a>
-            <a href="#" onclick="switchPage('faq', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-slate-200 font-semibold text-sm hover:bg-slate-800/50" data-target="faq"><i class="fa-solid fa-circle-question w-5 text-sky-400"></i> FAQ & Cara Order</a>
-            <div class="pt-4 border-t border-slate-800">
-                <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store" target="_blank" class="w-full py-3.5 rounded-xl btn-gold text-sm font-extrabold flex items-center justify-center gap-2 shadow-gold-glow">
-                    <i class="fa-brands fa-whatsapp text-lg"></i> WhatsApp Admin
+        <div id="mobile-menu" class="hidden md:hidden bw-panel border-t border-white/10 px-6 py-6 space-y-3 shadow-2xl">
+            <div class="text-[10px] uppercase font-mono tracking-wider text-zinc-500 mb-2">Navigasi Utama</div>
+            <a href="#" onclick="switchPage('home', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl bg-white/10 text-white font-bold text-xs" data-target="home"><i class="fa-solid fa-house w-4"></i> Beranda</a>
+            <a href="#" onclick="switchPage('products', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 font-semibold text-xs hover:bg-zinc-800/50" data-target="products"><i class="fa-solid fa-layer-group w-4"></i> Katalog Apps Premium</a>
+            <a href="#" onclick="switchPage('services', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 font-semibold text-xs hover:bg-zinc-800/50" data-target="services"><i class="fa-solid fa-wand-magic-sparkles w-4"></i> Jasa Edit & Coloring CC</a>
+            <a href="#" onclick="switchPage('proof', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 font-semibold text-xs hover:bg-zinc-800/50" data-target="proof"><i class="fa-solid fa-star w-4"></i> Bukti Testimoni</a>
+            <a href="#" onclick="switchPage('reseller', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 font-semibold text-xs hover:bg-zinc-800/50" data-target="reseller"><i class="fa-solid fa-user-tie w-4"></i> Gabung Reseller</a>
+            <a href="#" onclick="switchPage('faq', event); toggleMobileMenu();" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-zinc-300 font-semibold text-xs hover:bg-zinc-800/50" data-target="faq"><i class="fa-solid fa-circle-question w-4"></i> FAQ & Cara Order</a>
+            <div class="pt-4 border-t border-zinc-800">
+                <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store" target="_blank" class="w-full py-3 rounded-xl btn-bw text-xs font-bold flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Admin
                 </a>
             </div>
         </div>
     </header>
 
     <!-- SIDE-DRAWER PROFIL OWNER -->
-    <div id="profileDrawer" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex justify-start hidden">
-        <div id="profileDrawerContent" class="w-[85%] max-w-sm h-full bg-[#0f172a] border-r border-amber-500/30 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto relative">
-            <button onclick="toggleProfileDrawer()" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition" title="Tutup Profil"><i class="fa-solid fa-xmark"></i></button>
+    <div id="profileDrawer" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex justify-start hidden">
+        <div id="profileDrawerContent" class="w-[85%] max-w-sm h-full bg-zinc-950 border-r border-white/10 p-6 flex flex-col justify-between shadow-2xl overflow-y-auto relative">
+            <button onclick="toggleProfileDrawer()" class="absolute top-5 right-5 w-8 h-8 rounded-xl bg-zinc-900 text-zinc-400 hover:text-white flex items-center justify-center transition" title="Tutup Profil"><i class="fa-solid fa-xmark text-xs"></i></button>
 
             <div class="space-y-6 pt-2">
-                <div class="flex items-center gap-3.5 pb-5 border-b border-slate-800">
-                    <div class="logo-emblem w-14 h-14 bg-slate-900 border border-amber-400 flex-shrink-0 animate-crown-logo">
-                        <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-amber-400 text-xl\'></i>';">
+                <div class="flex items-center gap-3.5 pb-5 border-b border-zinc-800">
+                    <div class="logo-emblem w-12 h-12 bg-zinc-900 border border-white/20 flex-shrink-0">
+                        <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-white text-lg\'></i>';">
                     </div>
                     <div>
-                        <h3 class="text-base font-black font-serif animated-gold-title">REIYUX STORE</h3>
-                        <p class="text-[10px] text-amber-400/90 font-bold uppercase tracking-wider">Official Digital Hub</p>
-                        <span class="inline-flex items-center gap-1 text-[9px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 font-semibold mt-1">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Terverifikasi Resmi
+                        <h3 class="text-sm font-bold font-mono text-white">REIYUX STORE</h3>
+                        <p class="text-[10px] text-zinc-400 font-mono uppercase tracking-wider">Official Digital Hub</p>
+                        <span class="inline-flex items-center gap-1 text-[9px] px-2 py-0.5 rounded-full bg-white/10 text-white border border-white/20 font-semibold mt-1">
+                            <span class="w-1.5 h-1.5 rounded-full bg-white animate-pulse"></span> Terverifikasi Resmi
                         </span>
                     </div>
                 </div>
 
                 <div class="space-y-4">
-                    <div class="flex items-center gap-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+                    <div class="flex items-center gap-2 text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider">
                         <i class="fa-solid fa-user-gear"></i> Informasi Owner & Toko
                     </div>
 
-                    <div class="gold-panel p-4 rounded-2xl space-y-3.5 border-amber-500/30 shadow-md">
+                    <div class="bw-panel p-4 rounded-2xl space-y-3.5 border-white/10">
                         <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xs flex-shrink-0">
+                            <div class="w-7 h-7 rounded-lg bg-white/10 text-white flex items-center justify-center text-xs flex-shrink-0">
                                 <i class="fa-solid fa-id-card"></i>
                             </div>
                             <div>
-                                <span class="text-[10px] text-slate-400 uppercase font-semibold block">Nama / Owner</span>
-                                <span class="text-xs font-extrabold text-white">M REIHAN RAMDANI</span>
+                                <span class="text-[10px] text-zinc-400 uppercase font-semibold block">Nama / Owner</span>
+                                <span class="text-xs font-bold text-white">M REIHAN RAMDANI</span>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xs flex-shrink-0">
+                            <div class="w-7 h-7 rounded-lg bg-white/10 text-white flex items-center justify-center text-xs flex-shrink-0">
                                 <i class="fa-solid fa-envelope"></i>
                             </div>
                             <div class="overflow-hidden">
-                                <span class="text-[10px] text-slate-400 uppercase font-semibold block">Email Resmi</span>
-                                <a href="mailto:reihanramdani398@gmail.com" class="text-xs font-extrabold text-amber-300 hover:underline break-all">reihanramdani398@gmail.com</a>
+                                <span class="text-[10px] text-zinc-400 uppercase font-semibold block">Email Resmi</span>
+                                <a href="mailto:reihanramdani398@gmail.com" class="text-xs font-bold text-zinc-200 hover:underline break-all">reihanramdani398@gmail.com</a>
                             </div>
                         </div>
 
                         <div class="flex items-start gap-3">
-                            <div class="w-8 h-8 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xs flex-shrink-0">
+                            <div class="w-7 h-7 rounded-lg bg-white/10 text-white flex items-center justify-center text-xs flex-shrink-0">
                                 <i class="fa-solid fa-location-dot"></i>
                             </div>
                             <div>
-                                <span class="text-[10px] text-slate-400 uppercase font-semibold block">Alamat Toko</span>
-                                <span class="text-xs font-extrabold text-white">kp.balandongan</span>
+                                <span class="text-[10px] text-zinc-400 uppercase font-semibold block">Alamat Toko</span>
+                                <span class="text-xs font-bold text-white">kp.balandongan</span>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-3 pt-1 border-t border-slate-800">
-                            <div class="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-xs flex-shrink-0">
+                        <div class="flex items-start gap-3 pt-1 border-t border-zinc-800">
+                            <div class="w-7 h-7 rounded-lg bg-white/10 text-white flex items-center justify-center text-xs flex-shrink-0">
                                 <i class="fa-solid fa-headset"></i>
                             </div>
                             <div>
-                                <span class="text-[10px] text-slate-400 uppercase font-semibold block">Layanan Konsumen</span>
-                                <span class="text-xs font-extrabold text-emerald-400">Aktif 24 Jam Nonstop</span>
+                                <span class="text-[10px] text-zinc-400 uppercase font-semibold block">Layanan Konsumen</span>
+                                <span class="text-xs font-bold text-white">Aktif 24 Jam Nonstop</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="space-y-2">
-                    <span class="text-[10px] text-slate-400 uppercase font-bold tracking-wider block">Kontak & Media Sosial</span>
+                    <span class="text-[10px] text-zinc-400 uppercase font-bold tracking-wider block">Kontak & Media Sosial</span>
                     <div class="grid grid-cols-3 gap-2">
-                        <a href="https://wa.me/6283165869029?text=Halo%20Reihan,%20saya%20ingin%20tanya%20seputar%20Reiyux%20Store" target="_blank" class="py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500 text-amber-400 text-xs font-bold transition flex flex-col items-center justify-center gap-1">
+                        <a href="https://wa.me/6283165869029?text=Halo%20Reihan,%20saya%20ingin%20tanya%20seputar%20Reiyux%20Store" target="_blank" class="py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-white text-white text-xs font-bold transition flex flex-col items-center justify-center gap-1">
                             <i class="fa-brands fa-whatsapp text-sm"></i>
-                            <span class="text-[9px]">WhatsApp</span>
+                            <span class="text-[9px] font-mono">WhatsApp</span>
                         </a>
-                        <a href="https://www.instagram.com/reiiramdanii_?mdxt=NnlpYm8xaGR5eG45" target="_blank" class="py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500 text-amber-400 text-xs font-bold transition flex flex-col items-center justify-center gap-1">
+                        <a href="https://www.instagram.com/reiiramdanii_?mdxt=NnlpYm8xaGR5eG45" target="_blank" class="py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-white text-white text-xs font-bold transition flex flex-col items-center justify-center gap-1">
                             <i class="fa-brands fa-instagram text-sm"></i>
-                            <span class="text-[9px]">Instagram</span>
+                            <span class="text-[9px] font-mono">Instagram</span>
                         </a>
-                        <a href="https://www.tiktok.com/@reiipresettt?_r=1&_t=ZS-9Ae2fgA9eXQ" target="_blank" class="py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-amber-500 text-amber-400 text-xs font-bold transition flex flex-col items-center justify-center gap-1">
+                        <a href="https://www.tiktok.com/@reiipresettt?_r=1&_t=ZS-9Ae2fgA9eXQ" target="_blank" class="py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-white text-white text-xs font-bold transition flex flex-col items-center justify-center gap-1">
                             <i class="fa-brands fa-tiktok text-sm"></i>
-                            <span class="text-[9px]">TikTok</span>
+                            <span class="text-[9px] font-mono">TikTok</span>
                         </a>
                     </div>
                 </div>
             </div>
 
-            <div class="pt-6 border-t border-slate-800 space-y-3">
-                <a href="https://wa.me/6283165869029?text=Halo%20Reihan,%20saya%20butuh%20bantuan" target="_blank" class="w-full py-3 rounded-xl btn-gold text-xs font-black flex items-center justify-center gap-2 shadow-gold-glow">
+            <div class="pt-6 border-t border-zinc-800 space-y-3">
+                <a href="https://wa.me/6283165869029?text=Halo%20Reihan,%20saya%20butuh%20bantuan" target="_blank" class="w-full py-3 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-2">
                     <i class="fa-brands fa-whatsapp"></i> Chat Owner Langsung
                 </a>
-                <p class="text-[9px] text-center text-slate-500">Reiyux Store &copy; 2026 • All Rights Reserved</p>
+                <p class="text-[9px] text-center text-zinc-500 font-mono">Reiyux Store &copy; 2026 • All Rights Reserved</p>
             </div>
         </div>
     </div>
 
     <!-- MAIN CONTENT CONTAINER -->
-    <main class="flex-grow pt-36 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative">
+    <main class="flex-grow pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative">
 
-        <!-- 1. HOME PAGE -->
+        <!-- 1. HOME PAGE (HANYA HALAMAN INI YANG ADA ANIMASI TEKNOLOGI BESAR) -->
         <section id="page-home" class="page-section active-page space-y-16 pt-4">
-            <div class="text-center max-w-4xl mx-auto space-y-8 flex flex-col items-center">
+            <div class="text-center max-w-3xl mx-auto space-y-8 flex flex-col items-center">
                 
-                <!-- ANIMATED LOGO CROWN EMBLEM -->
-                <div class="relative group cursor-pointer" onclick="toggleProfileDrawer()">
-                    <div class="absolute -inset-2 rounded-full bg-gradient-to-r from-amber-500 via-yellow-300 to-amber-700 blur-2xl opacity-75 group-hover:opacity-100 transition duration-1000 animate-pulse"></div>
-                    <div class="logo-emblem w-28 h-28 sm:w-36 sm:h-36 relative z-10 animate-crown-logo bg-slate-900 border-2 border-amber-400">
-                        <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-amber-400 text-4xl\'></i>';">
+                <!-- BESAR & KEREN: ANIMASI TEKNOLOGI HOLOGRAM & SCANNER DI HALAMAN UTAMA -->
+                <div class="relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center cursor-pointer group" onclick="toggleProfileDrawer()">
+                    <!-- Ring 1 Outer Tech Dashed -->
+                    <div class="absolute inset-0 rounded-full border border-dashed border-white/30 tech-ring-1"></div>
+                    <!-- Ring 2 Inner Tech Glowing Scan -->
+                    <div class="absolute inset-3 rounded-full border-2 border-white/10 border-t-white/80 tech-ring-2"></div>
+                    <!-- Ambient Glow Pulse -->
+                    <div class="absolute inset-6 rounded-full bg-white/5 tech-pulse-glow blur-md"></div>
+                    <!-- Logo Emblem di Tengah Hologram -->
+                    <div class="logo-emblem w-28 h-28 sm:w-32 sm:h-32 bg-zinc-900 border-2 border-white/40 shadow-2xl relative z-10">
+                        <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-white text-4xl\'></i>';">
                     </div>
                 </div>
 
-                <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full gold-panel text-xs font-bold text-amber-300 border border-amber-500/40 shadow-gold-glow">
-                    <i class="fa-solid fa-shield-halved text-amber-400"></i> Garansi Anti Back-To-Free 100% • Official Store
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bw-panel text-xs font-mono font-medium text-zinc-300">
+                    <i class="fa-solid fa-shield-halved text-white"></i> Garansi Resmi 100% • Official Store
                 </div>
                 
-                <!-- ANIMATED TITLE -->
-                <h1 class="text-4xl sm:text-7xl font-black tracking-tight leading-[1.12] font-serif">
-                    Solusi Akun Digital <br>
-                    <span class="animated-gold-title drop-shadow-xl">Mewah, Murah, & Kilat!</span>
+                <!-- TITLE -->
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight font-mono text-white">
+                    Akses Aplikasi Digital & Services <br>
+                    <span class="text-zinc-400">Eksklusif & Terpercaya</span>
                 </h1>
                 
-                <!-- EXPANDED DETAILED DESKRIPSI HERO SECTION -->
-                <div class="gold-panel p-6 sm:p-8 rounded-3xl max-w-3xl mx-auto space-y-4 text-left border-amber-500/30">
-                    <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-medium">
-                        Selamat datang di <strong class="text-amber-400">Reiyux Store</strong> — Platform Digital Hub terpercaya untuk semua kebutuhan aplikasi premium, hiburan keluarga, hingga preset editing sinematik terbaik. Kami hadir mempermudah hidupmu tanpa perlu bayar mahal!
+                <!-- DESKRIPSI HERO SECTION -->
+                <div class="bw-panel p-6 sm:p-8 rounded-3xl max-w-2xl mx-auto space-y-4 text-left">
+                    <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                        Selamat datang di <strong class="text-white">Reiyux Store</strong> — Hub digital resmi untuk langganan aplikasi premium, preset CC sinematik, serta layanan editing video profesional bergaransi penuh.
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs">
-                        <div class="flex items-start gap-2 text-slate-300">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-                            <span><strong>100% Legal & Bergaransi:</strong> Akun aman dilindungi garansi penuh selama durasi langganan.</span>
+                        <div class="flex items-start gap-2 text-zinc-400">
+                            <i class="fa-solid fa-check text-white mt-0.5"></i>
+                            <span><strong>100% Legal & Bergaransi:</strong> Akun terlindungi garansi penuh.</span>
                         </div>
-                        <div class="flex items-start gap-2 text-slate-300">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-                            <span><strong>Proses Kilat 1-5 Menit:</strong> Pesanan langsung diproses otomatis begitu konfirmasi pembayaran.</span>
+                        <div class="flex items-start gap-2 text-zinc-400">
+                            <i class="fa-solid fa-check text-white mt-0.5"></i>
+                            <span><strong>Proses Kilat 1-5 Menit:</strong> Terverifikasi cepat oleh admin.</span>
                         </div>
-                        <div class="flex items-start gap-2 text-slate-300">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-                            <span><strong>Fitur Pro Unlocked:</strong> Bebas iklan, bebas watermark, dan akses semua fitur VIP teratas.</span>
+                        <div class="flex items-start gap-2 text-zinc-400">
+                            <i class="fa-solid fa-check text-white mt-0.5"></i>
+                            <span><strong>Akses VIP Unlocked:</strong> Bebas iklan & fitur lengkap.</span>
                         </div>
-                        <div class="flex items-start gap-2 text-slate-300">
-                            <i class="fa-solid fa-circle-check text-amber-400 mt-0.5"></i>
-                            <span><strong>Bantuan Admin 24/7:</strong> Tim customer service kami siap membantu kendala kapan pun.</span>
+                        <div class="flex items-start gap-2 text-zinc-400">
+                            <i class="fa-solid fa-check text-white mt-0.5"></i>
+                            <span><strong>Bantuan Admin 24/7:</strong> Layanan konsumen setiap hari.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md">
-                    <button onclick="switchPage('products')" class="w-full sm:w-auto px-8 py-4 rounded-2xl btn-gold text-sm font-black shadow-gold-lg flex items-center justify-center gap-3">
-                        <i class="fa-solid fa-bolt text-xs"></i>
-                        <span>Beli Akun Sekarang</span>
+                    <button onclick="switchPage('products')" class="w-full sm:w-auto px-8 py-4 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-layer-group text-xs"></i>
+                        <span>Jelajahi Katalog</span>
                         <i class="fa-solid fa-arrow-right text-xs"></i>
                     </button>
-                    <button onclick="copyStoreLink()" class="w-full sm:w-auto px-6 py-4 rounded-2xl gold-panel text-xs font-bold text-amber-300 hover:border-amber-400 transition flex items-center justify-center gap-2">
+                    <button onclick="copyStoreLink()" class="w-full sm:w-auto px-6 py-4 rounded-xl bw-panel text-xs font-semibold text-zinc-300 hover:text-white transition flex items-center justify-center gap-2">
                         <i class="fa-solid fa-share-nodes"></i>
-                        <span id="share-btn-text">Bagikan Store</span>
+                        <span id="share-btn-text">Bagikan Link</span>
                     </button>
-                </div>
-            </div>
-
-            <!-- SIMULASI KALKULATOR HEMAT -->
-            <div class="gold-panel p-6 sm:p-8 rounded-3xl max-w-4xl mx-auto border-amber-500/30 shadow-gold-glow">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-                    <div class="space-y-2">
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">💰 Hemat Hingga 75%</span>
-                        <h3 class="text-xl sm:text-2xl font-black text-white font-serif">Bandingkan Harganya!</h3>
-                        <p class="text-xs text-slate-400 leading-relaxed max-w-md">Beli resmi mahal? Di Reiyux Store kamu dapat fitur premium legal yang sama dengan harga jauh lebih ramah kantong.</p>
-                    </div>
-                    <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 space-y-2 min-w-[260px]">
-                        <div class="flex justify-between text-xs"><span class="text-slate-400">Beli Resmi (3 Apps/bln):</span> <span class="line-through text-rose-400 font-bold">~Rp 210.000</span></div>
-                        <div class="flex justify-between text-xs"><span class="text-amber-400 font-bold">Di Reiyux Store:</span> <span class="text-emerald-400 font-black">~Rp 45.000</span></div>
-                        <div class="pt-2 border-t border-slate-800 flex justify-between text-xs font-black"><span class="text-white">Total Hemat Anda:</span> <span class="animated-gold-title">Rp 165.000 / bln!</span></div>
-                    </div>
                 </div>
             </div>
 
             <!-- LIVE STATS BANNER -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-                <div class="gold-panel p-5 rounded-2xl text-center space-y-1">
-                    <div class="text-2xl sm:text-3xl font-black animated-gold-title">10.000+</div>
-                    <div class="text-[11px] text-slate-400 font-semibold uppercase">Transaksi Sukses</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bw-panel p-5 rounded-2xl text-center space-y-1">
+                    <div class="text-2xl font-mono font-bold text-white">10.000+</div>
+                    <div class="text-[10px] text-zinc-500 font-mono uppercase">Transaksi Sukses</div>
                 </div>
-                <div class="gold-panel p-5 rounded-2xl text-center space-y-1">
-                    <div class="text-2xl sm:text-3xl font-black animated-gold-title">1-5 Menit</div>
-                    <div class="text-[11px] text-slate-400 font-semibold uppercase">Proses Kirim Akun</div>
+                <div class="bw-panel p-5 rounded-2xl text-center space-y-1">
+                    <div class="text-2xl font-mono font-bold text-white">1-5 Menit</div>
+                    <div class="text-[10px] text-zinc-500 font-mono uppercase">Proses Pengiriman</div>
                 </div>
-                <div class="gold-panel p-5 rounded-2xl text-center space-y-1">
-                    <div class="text-2xl sm:text-3xl font-black animated-gold-title">100%</div>
-                    <div class="text-[11px] text-slate-400 font-semibold uppercase">Garansi Penuh</div>
+                <div class="bw-panel p-5 rounded-2xl text-center space-y-1">
+                    <div class="text-2xl font-mono font-bold text-white">100%</div>
+                    <div class="text-[10px] text-zinc-500 font-mono uppercase">Garansi Penuh</div>
                 </div>
-                <div class="gold-panel p-5 rounded-2xl text-center space-y-1">
-                    <div class="text-2xl sm:text-3xl font-black animated-gold-title">24/7</div>
-                    <div class="text-[11px] text-slate-400 font-semibold uppercase">Layanan Fast Response</div>
+                <div class="bw-panel p-5 rounded-2xl text-center space-y-1">
+                    <div class="text-2xl font-mono font-bold text-white">24/7</div>
+                    <div class="text-[10px] text-zinc-500 font-mono uppercase">Fast Support</div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. PRODUCTS PAGE (KATALOG KHUSUS 8 APPS ORIGINAL) -->
+        <!-- 2. PRODUCTS PAGE -->
         <section id="page-products" class="page-section space-y-8">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
-                <h2 class="text-3xl sm:text-4xl font-black font-serif animated-gold-title">Katalog Lengkap Apps Premium</h2>
-                <p class="text-slate-400 text-sm">Klik produk mana saja untuk masuk ke halaman detail lengkap produk tersebut!</p>
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white">Katalog Aplikasi Premium</h2>
+                <p class="text-zinc-400 text-xs">Klik pada kartu produk untuk melihat rincian spesifikasi lengkap.</p>
             </div>
 
-            <div class="max-w-2xl mx-auto space-y-4">
-                <div class="relative">
-                    <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-amber-400"><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Cari aplikasi (Alight Motion, Spotify, Canva, Netflix, CapCut)..." class="w-full pl-11 pr-4 py-3.5 rounded-2xl gold-panel text-white text-xs sm:text-sm focus:border-amber-400 focus:outline-none shadow-gold-glow">
+            <!-- SEARCH BAR & FILTER CATEGORIES -->
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-grow">
+                        <span class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-zinc-500"><i class="fa-solid fa-magnifying-glass text-xs"></i></span>
+                        <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="Cari aplikasi..." class="w-full pl-10 pr-4 py-3 rounded-xl bw-panel text-white text-xs focus:border-white focus:outline-none">
+                    </div>
+                    <select id="sortSelect" onchange="sortProducts()" class="px-4 py-3 rounded-xl bw-panel text-zinc-300 text-xs font-semibold focus:border-white focus:outline-none cursor-pointer">
+                        <option value="default">Sortir: Standar</option>
+                        <option value="low-to-high">Harga: Rendah ke Tinggi</option>
+                        <option value="high-to-low">Harga: Tinggi ke Rendah</option>
+                    </select>
+                </div>
+
+                <!-- Category Pills -->
+                <div class="flex flex-wrap items-center justify-center gap-2">
+                    <button onclick="filterCategoryTag('all', this)" class="tag-filter-btn px-4 py-1.5 rounded-xl bg-white text-black text-xs font-bold transition">Semua</button>
+                    <button onclick="filterCategoryTag('editing', this)" class="tag-filter-btn px-4 py-1.5 rounded-xl bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-white text-xs font-medium transition">Editing</button>
+                    <button onclick="filterCategoryTag('streaming', this)" class="tag-filter-btn px-4 py-1.5 rounded-xl bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-white text-xs font-medium transition">Streaming</button>
+                    <button onclick="filterCategoryTag('ai', this)" class="tag-filter-btn px-4 py-1.5 rounded-xl bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-white text-xs font-medium transition">AI & Tools</button>
                 </div>
             </div>
 
-            <!-- Grid 8 Produk Apps Original -->
-            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Grid 8 Produk -->
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 
                 <!-- 1. Alight Motion -->
-                <div onclick="openProductDetailPage('alight-motion')" class="product-card gold-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="alight motion">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-bold uppercase">1 Tahun Private</span>
-                        <span class="text-[10px] text-amber-300 font-bold flex items-center gap-1"><i class="fa-solid fa-star text-amber-400"></i> 4.9</span>
-                    </div>
+                <div onclick="openProductDetailPage('alight-motion')" class="product-card bw-panel rounded-2xl p-5 flex flex-col justify-between" data-name="alight motion pro" data-category="editing" data-price="10000">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 shadow-sm overflow-hidden p-2">
-                            <img src="https://i.ibb.co.com/KjkG1VhV/Alight-Motion.png" alt="Alight Motion Logo" class="w-full h-full object-contain rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-zinc-300 text-[10px] font-mono">1 TAHUN PRIVATE</span>
+                            <span class="text-[10px] text-zinc-400 font-mono"><i class="fa-solid fa-star text-white"></i> 4.9</span>
                         </div>
-                        <h3 class="text-base font-bold text-white mb-1">Alight Motion Pro</h3>
-                        <p class="text-xs text-amber-400 font-bold mb-2">1 Tahun Private</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Efek visual pro, tanpa watermark, durasi panjang 1 Tahun.</p>
+                        <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3 p-2">
+                            <img src="https://i.ibb.co.com/KjkG1VhV/Alight-Motion.png" alt="Alight Motion Logo" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Alight Motion Pro</h3>
+                        <p class="text-xs text-zinc-400 mb-3">Efek visual pro, tanpa watermark, durasi panjang 1 Tahun.</p>
                     </div>
-                    <div class="space-y-3" onclick="event.stopPropagation()">
-                        <div class="text-lg font-extrabold animated-gold-title">Rp 10.000</div>
+                    <div class="space-y-3 pt-3 border-t border-zinc-800/80" onclick="event.stopPropagation()">
+                        <div class="text-base font-bold font-mono text-white">Rp 10.000</div>
                         <div class="grid grid-cols-2 gap-1.5">
-                            <button onclick="openProductDetailPage('alight-motion')" class="py-2.5 rounded-xl btn-gold text-[11px] font-black transition flex items-center justify-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
-                            <button onclick="addToCart('Alight Motion (1 Tahun Private)', 10000)" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i></button>
+                            <button onclick="openProductDetailPage('alight-motion')" class="py-2 rounded-lg btn-bw text-[11px] font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
+                            <button onclick="addToCart('Alight Motion (1 Tahun Private)', 10000)" class="py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] font-bold"><i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- 2. Spotify -->
-                <div onclick="openProductDetailPage('spotify')" class="product-card gold-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="spotify premium">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-[10px] font-bold uppercase">1 Bulan Private</span>
-                        <span class="text-[10px] text-amber-300 font-bold flex items-center gap-1"><i class="fa-solid fa-star text-amber-400"></i> 4.9</span>
-                    </div>
+                <div onclick="openProductDetailPage('spotify')" class="product-card bw-panel rounded-2xl p-5 flex flex-col justify-between" data-name="spotify premium" data-category="streaming" data-price="20000">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mb-4 shadow-sm p-2"><i class="fa-brands fa-spotify"></i></div>
-                        <h3 class="text-base font-bold text-white mb-1">Spotify Premium</h3>
-                        <p class="text-xs text-emerald-400 font-bold mb-2">1 Bulan Private</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Bebas iklan, skip tak terbatas, audio jernih extremely high.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-zinc-300 text-[10px] font-mono">1 BULAN PRIVATE</span>
+                            <span class="text-[10px] text-zinc-400 font-mono"><i class="fa-solid fa-star text-white"></i> 4.9</span>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-2xl text-white mb-3 p-2"><i class="fa-brands fa-spotify"></i></div>
+                        <h3 class="text-sm font-bold text-white mb-1">Spotify Premium</h3>
+                        <p class="text-xs text-zinc-400 mb-3">Bebas iklan, skip tak terbatas, audio jernih extremely high.</p>
                     </div>
-                    <div class="space-y-3" onclick="event.stopPropagation()">
-                        <div class="text-lg font-extrabold animated-gold-title">Rp 20.000</div>
+                    <div class="space-y-3 pt-3 border-t border-zinc-800/80" onclick="event.stopPropagation()">
+                        <div class="text-base font-bold font-mono text-white">Rp 20.000</div>
                         <div class="grid grid-cols-2 gap-1.5">
-                            <button onclick="openProductDetailPage('spotify')" class="py-2.5 rounded-xl btn-gold text-[11px] font-black transition flex items-center justify-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
-                            <button onclick="addToCart('Spotify Premium (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i></button>
+                            <button onclick="openProductDetailPage('spotify')" class="py-2 rounded-lg btn-bw text-[11px] font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
+                            <button onclick="addToCart('Spotify Premium (1 Bulan Private)', 20000)" class="py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] font-bold"><i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. Canva -->
-                <div onclick="openProductDetailPage('canva')" class="product-card gold-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="canva pro">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-[10px] font-bold uppercase">1 Bulan Private</span>
-                        <span class="text-[10px] text-amber-300 font-bold flex items-center gap-1"><i class="fa-solid fa-star text-amber-400"></i> 4.9</span>
-                    </div>
+                <div onclick="openProductDetailPage('canva')" class="product-card bw-panel rounded-2xl p-5 flex flex-col justify-between" data-name="canva pro" data-category="ai" data-price="5000">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mb-4 shadow-sm overflow-hidden p-2">
-                            <img src="https://i.ibb.co.com/W49q28pT/Canva.png" alt="Canva Logo" class="w-full h-full object-contain rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-zinc-300 text-[10px] font-mono">1 BULAN PRIVATE</span>
+                            <span class="text-[10px] text-zinc-400 font-mono"><i class="fa-solid fa-star text-white"></i> 4.9</span>
                         </div>
-                        <h3 class="text-base font-bold text-white mb-1">Canva Pro</h3>
-                        <p class="text-xs text-sky-400 font-bold mb-2">1 Bulan Private</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Template desain premium lengkap, hapus background otomatis.</p>
+                        <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3 p-2">
+                            <img src="https://i.ibb.co.com/W49q28pT/Canva.png" alt="Canva Logo" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Canva Pro</h3>
+                        <p class="text-xs text-zinc-400 mb-3">Template desain premium lengkap, hapus background otomatis.</p>
                     </div>
-                    <div class="space-y-3" onclick="event.stopPropagation()">
-                        <div class="text-lg font-extrabold animated-gold-title">Rp 5.000</div>
+                    <div class="space-y-3 pt-3 border-t border-zinc-800/80" onclick="event.stopPropagation()">
+                        <div class="text-base font-bold font-mono text-white">Rp 5.000</div>
                         <div class="grid grid-cols-2 gap-1.5">
-                            <button onclick="openProductDetailPage('canva')" class="py-2.5 rounded-xl btn-gold text-[11px] font-black transition flex items-center justify-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
-                            <button onclick="addToCart('Canva Pro (1 Bulan Private)', 5000)" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i></button>
+                            <button onclick="openProductDetailPage('canva')" class="py-2 rounded-lg btn-bw text-[11px] font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
+                            <button onclick="addToCart('Canva Pro (1 Bulan Private)', 5000)" class="py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] font-bold"><i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- 4. Netflix -->
-                <div onclick="openProductDetailPage('netflix')" class="product-card gold-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="netflix">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-[10px] font-bold uppercase">1 Bulan SemiPrivate</span>
-                        <span class="text-[10px] text-amber-300 font-bold flex items-center gap-1"><i class="fa-solid fa-star text-amber-400"></i> 4.9</span>
-                    </div>
+                <div onclick="openProductDetailPage('netflix')" class="product-card bw-panel rounded-2xl p-5 flex flex-col justify-between" data-name="netflix" data-category="streaming" data-price="35000">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center mb-4 shadow-sm overflow-hidden p-2">
-                            <img src="https://i.ibb.co.com/k6zwHLWV/Netflix.png" alt="Netflix Logo" class="w-full h-full object-contain rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-zinc-300 text-[10px] font-mono">1 BULAN SEMIPRIVATE</span>
+                            <span class="text-[10px] text-zinc-400 font-mono"><i class="fa-solid fa-star text-white"></i> 4.9</span>
                         </div>
-                        <h3 class="text-base font-bold text-white mb-1">Netflix Premium</h3>
-                        <p class="text-xs text-rose-400 font-bold mb-2">1 Bulan SemiPrivate</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Nonton film & series Ultra HD 4K, anti kendala, garansi aman.</p>
+                        <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3 p-2">
+                            <img src="https://i.ibb.co.com/k6zwHLWV/Netflix.png" alt="Netflix Logo" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Netflix Premium</h3>
+                        <p class="text-xs text-zinc-400 mb-3">Nonton film & series Ultra HD 4K, anti kendala, garansi aman.</p>
                     </div>
-                    <div class="space-y-3" onclick="event.stopPropagation()">
-                        <div class="text-lg font-extrabold animated-gold-title">Rp 35.000</div>
+                    <div class="space-y-3 pt-3 border-t border-zinc-800/80" onclick="event.stopPropagation()">
+                        <div class="text-base font-bold font-mono text-white">Rp 35.000</div>
                         <div class="grid grid-cols-2 gap-1.5">
-                            <button onclick="openProductDetailPage('netflix')" class="py-2.5 rounded-xl btn-gold text-[11px] font-black transition flex items-center justify-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
-                            <button onclick="addToCart('Netflix Premium (1 Bulan SemiPrivate)', 35000)" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i></button>
+                            <button onclick="openProductDetailPage('netflix')" class="py-2 rounded-lg btn-bw text-[11px] font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
+                            <button onclick="addToCart('Netflix Premium (1 Bulan SemiPrivate)', 35000)" class="py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] font-bold"><i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- 5. CapCut -->
-                <div onclick="openProductDetailPage('capcut')" class="product-card gold-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="capcut pro">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-bold uppercase">1 Bulan Private</span>
-                        <span class="text-[10px] text-amber-300 font-bold flex items-center gap-1"><i class="fa-solid fa-star text-amber-400"></i> 4.9</span>
-                    </div>
+                <div onclick="openProductDetailPage('capcut')" class="product-card bw-panel rounded-2xl p-5 flex flex-col justify-between" data-name="capcut pro" data-category="editing" data-price="23000">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mb-4 shadow-sm overflow-hidden p-2">
-                            <img src="https://i.ibb.co.com/Wpxd3xf8/CapCut.png" alt="CapCut Logo" class="w-full h-full object-contain rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-zinc-300 text-[10px] font-mono">1 BULAN PRIVATE</span>
+                            <span class="text-[10px] text-zinc-400 font-mono"><i class="fa-solid fa-star text-white"></i> 4.9</span>
                         </div>
-                        <h3 class="text-base font-bold text-white mb-1">CapCut Pro</h3>
-                        <p class="text-xs text-amber-400 font-bold mb-2">1 Bulan Private</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Buka efek visual pro, transisi eksklusif, fitur AI editor.</p>
+                        <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3 p-2">
+                            <img src="https://i.ibb.co.com/Wpxd3xf8/CapCut.png" alt="CapCut Logo" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">CapCut Pro</h3>
+                        <p class="text-xs text-zinc-400 mb-3">Buka efek visual pro, transisi eksklusif, fitur AI editor.</p>
                     </div>
-                    <div class="space-y-3" onclick="event.stopPropagation()">
-                        <div class="text-lg font-extrabold animated-gold-title">Rp 23.000</div>
+                    <div class="space-y-3 pt-3 border-t border-zinc-800/80" onclick="event.stopPropagation()">
+                        <div class="text-base font-bold font-mono text-white">Rp 23.000</div>
                         <div class="grid grid-cols-2 gap-1.5">
-                            <button onclick="openProductDetailPage('capcut')" class="py-2.5 rounded-xl btn-gold text-[11px] font-black transition flex items-center justify-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
-                            <button onclick="addToCart('CapCut Pro (1 Bulan Private)', 23000)" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i></button>
+                            <button onclick="openProductDetailPage('capcut')" class="py-2 rounded-lg btn-bw text-[11px] font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
+                            <button onclick="addToCart('CapCut Pro (1 Bulan Private)', 23000)" class="py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] font-bold"><i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- 6. YouTube -->
-                <div onclick="openProductDetailPage('youtube')" class="product-card gold-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="youtube premium">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-[10px] font-bold uppercase">1 Bulan Private</span>
-                        <span class="text-[10px] text-amber-300 font-bold flex items-center gap-1"><i class="fa-solid fa-star text-amber-400"></i> 4.9</span>
-                    </div>
+                <div onclick="openProductDetailPage('youtube')" class="product-card bw-panel rounded-2xl p-5 flex flex-col justify-between" data-name="youtube premium" data-category="streaming" data-price="10000">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-red-500/10 border border-red-500/20 flex items-center justify-center mb-4 shadow-sm overflow-hidden p-2">
-                            <img src="https://i.ibb.co.com/8nH6jXWN/YouTube-logo.png" alt="YouTube Logo" class="w-full h-full object-contain rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-zinc-300 text-[10px] font-mono">1 BULAN PRIVATE</span>
+                            <span class="text-[10px] text-zinc-400 font-mono"><i class="fa-solid fa-star text-white"></i> 4.9</span>
                         </div>
-                        <h3 class="text-base font-bold text-white mb-1">YouTube Premium</h3>
-                        <p class="text-xs text-red-400 font-bold mb-2">1 Bulan Private</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Nonton video bebas iklan, putar latar belakang, bonus YT Music.</p>
+                        <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3 p-2">
+                            <img src="https://i.ibb.co.com/8nH6jXWN/YouTube-logo.png" alt="YouTube Logo" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">YouTube Premium</h3>
+                        <p class="text-xs text-zinc-400 mb-3">Nonton video bebas iklan, putar latar belakang, bonus YT Music.</p>
                     </div>
-                    <div class="space-y-3" onclick="event.stopPropagation()">
-                        <div class="text-lg font-extrabold animated-gold-title">Rp 10.000</div>
+                    <div class="space-y-3 pt-3 border-t border-zinc-800/80" onclick="event.stopPropagation()">
+                        <div class="text-base font-bold font-mono text-white">Rp 10.000</div>
                         <div class="grid grid-cols-2 gap-1.5">
-                            <button onclick="openProductDetailPage('youtube')" class="py-2.5 rounded-xl btn-gold text-[11px] font-black transition flex items-center justify-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
-                            <button onclick="addToCart('YouTube Premium (1 Bulan Private)', 10000)" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i></button>
+                            <button onclick="openProductDetailPage('youtube')" class="py-2 rounded-lg btn-bw text-[11px] font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
+                            <button onclick="addToCart('YouTube Premium (1 Bulan Private)', 10000)" class="py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] font-bold"><i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- 7. Wink VIP -->
-                <div onclick="openProductDetailPage('wink')" class="product-card gold-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="wink vip">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-400 text-[10px] font-bold uppercase">1 Bulan Private</span>
-                        <span class="text-[10px] text-amber-300 font-bold flex items-center gap-1"><i class="fa-solid fa-star text-amber-400"></i> 4.9</span>
-                    </div>
+                <div onclick="openProductDetailPage('wink')" class="product-card bw-panel rounded-2xl p-5 flex flex-col justify-between" data-name="wink vip" data-category="ai" data-price="20000">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-pink-500/10 border border-pink-500/20 flex items-center justify-center mb-4 shadow-sm overflow-hidden p-2">
-                            <img src="https://i.ibb.co.com/V7gBhdR/Wink-logo.png" alt="Wink Logo" class="w-full h-full object-contain rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-white/10 text-zinc-300 text-[10px] font-mono">1 BULAN PRIVATE</span>
+                            <span class="text-[10px] text-zinc-400 font-mono"><i class="fa-solid fa-star text-white"></i> 4.9</span>
                         </div>
-                        <h3 class="text-base font-bold text-white mb-1">Wink VIP</h3>
-                        <p class="text-xs text-pink-400 font-bold mb-2">1 Bulan Private</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">AI perbaikan video buram, jernihkan wajah, stabilkan video.</p>
+                        <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3 p-2">
+                            <img src="https://i.ibb.co.com/V7gBhdR/Wink-logo.png" alt="Wink Logo" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        <h3 class="text-sm font-bold text-white mb-1">Wink VIP</h3>
+                        <p class="text-xs text-zinc-400 mb-3">AI perbaikan video buram, jernihkan wajah, stabilkan video.</p>
                     </div>
-                    <div class="space-y-3" onclick="event.stopPropagation()">
-                        <div class="text-lg font-extrabold animated-gold-title">Rp 20.000</div>
+                    <div class="space-y-3 pt-3 border-t border-zinc-800/80" onclick="event.stopPropagation()">
+                        <div class="text-base font-bold font-mono text-white">Rp 20.000</div>
                         <div class="grid grid-cols-2 gap-1.5">
-                            <button onclick="openProductDetailPage('wink')" class="py-2.5 rounded-xl btn-gold text-[11px] font-black transition flex items-center justify-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
-                            <button onclick="addToCart('Wink VIP (1 Bulan Private)', 20000)" class="py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-cart-plus"></i></button>
+                            <button onclick="openProductDetailPage('wink')" class="py-2 rounded-lg btn-bw text-[11px] font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
+                            <button onclick="addToCart('Wink VIP (1 Bulan Private)', 20000)" class="py-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white text-[11px] font-bold"><i class="fa-solid fa-cart-plus"></i></button>
                         </div>
                     </div>
                 </div>
 
                 <!-- 8. ChatGPT Plus -->
-                <div onclick="openProductDetailPage('chatgpt')" class="product-card gold-panel rounded-3xl p-6 flex flex-col justify-between relative group" data-name="chatgpt">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-400 border border-slate-700 text-[10px] font-bold uppercase">Coming Soon</span>
-                        <span class="text-[10px] text-slate-500 font-bold">Soon</span>
-                    </div>
+                <div onclick="openProductDetailPage('chatgpt')" class="product-card bw-panel rounded-2xl p-5 flex flex-col justify-between" data-name="chatgpt plus" data-category="ai" data-price="0">
                     <div>
-                        <div class="w-16 h-16 rounded-2xl bg-slate-800/80 flex items-center justify-center mb-4 shadow-sm overflow-hidden p-2">
-                            <img src="https://i.ibb.co.com/mVJsvjF0/ChatGPT-logo.png" alt="ChatGPT Logo" class="w-full h-full object-contain rounded-xl">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-0.5 rounded-md bg-zinc-800 text-zinc-500 text-[10px] font-mono">COMING SOON</span>
+                            <span class="text-[10px] text-zinc-600 font-mono">Soon</span>
                         </div>
-                        <h3 class="text-base font-bold text-white mb-1">ChatGPT Plus</h3>
-                        <p class="text-xs text-slate-500 font-bold mb-2">Coming Soon</p>
-                        <p class="text-xs text-slate-400 leading-relaxed mb-4">Akses AI pintar versi plus dengan analisis data tingkat lanjut.</p>
+                        <div class="w-12 h-12 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-center mb-3 p-2 opacity-60">
+                            <img src="https://i.ibb.co.com/mVJsvjF0/ChatGPT-logo.png" alt="ChatGPT Logo" class="w-full h-full object-contain rounded-lg">
+                        </div>
+                        <h3 class="text-sm font-bold text-zinc-300 mb-1">ChatGPT Plus</h3>
+                        <p class="text-xs text-zinc-500 mb-3">Akses AI pintar versi plus dengan analisis data tingkat lanjut.</p>
                     </div>
-                    <div class="space-y-3" onclick="event.stopPropagation()">
-                        <div class="text-lg font-extrabold text-slate-500">Rp Kosong</div>
+                    <div class="space-y-3 pt-3 border-t border-zinc-800/80" onclick="event.stopPropagation()">
+                        <div class="text-base font-bold font-mono text-zinc-500">Rp Kosong</div>
                         <div class="grid grid-cols-2 gap-1.5">
-                            <button onclick="openProductDetailPage('chatgpt')" class="py-2.5 rounded-xl bg-slate-800 text-white text-[11px] font-bold transition flex items-center justify-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
-                            <button disabled class="py-2.5 rounded-xl bg-slate-800/80 text-slate-500 text-[11px] font-bold cursor-not-allowed flex items-center justify-center gap-1"><i class="fa-solid fa-ban"></i> Kosong</button>
+                            <button onclick="openProductDetailPage('chatgpt')" class="py-2 rounded-lg bg-zinc-800 text-white text-[11px] font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
+                            <button disabled class="py-2 rounded-lg bg-zinc-900 text-zinc-600 text-[11px] font-bold cursor-not-allowed"><i class="fa-solid fa-ban"></i> Kosong</button>
                         </div>
                     </div>
                 </div>
@@ -635,132 +634,120 @@
             </div>
         </section>
 
-        <!-- 3. PAGE KHUSUS: JASA EDIT & COLORING CC (TERPISAH DARI APPS) -->
-        <section id="page-services" class="page-section space-y-8 max-w-5xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
-                <h2 class="text-3xl sm:text-4xl font-black font-serif animated-gold-title">Jasa Edit & Coloring CC Sinematik</h2>
-                <p class="text-slate-400 text-sm">Layanan khusus editing video pro dan preset CC sinematik terpisah dari katalog aplikasi.</p>
+        <!-- 3. PAGE KHUSUS: JASA EDIT & COLORING CC -->
+        <section id="page-services" class="page-section space-y-8 max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white">Jasa Edit & Coloring CC Sinematik</h2>
+                <p class="text-zinc-400 text-xs">Layanan khusus editing video pro dan preset CC sinematik.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <!-- Paid Edit -->
-                <div onclick="openProductDetailPage('paid-edit')" class="product-card gold-panel p-6 rounded-3xl space-y-4 flex flex-col justify-between">
+                <div onclick="openProductDetailPage('paid-edit')" class="product-card bw-panel p-5 rounded-2xl space-y-4 flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-clapperboard"></i></div>
-                        <h3 class="text-lg font-bold text-white mb-1">Paid Edit Video Pro</h3>
-                        <p class="text-xs text-amber-400 font-bold mb-2">Jasa Video Editing</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">Jasa edit video JJ, Reels, dan sinematik pro dengan transisi super rapi dan pemotongan beat yang presisi.</p>
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-clapperboard"></i></div>
+                        <h3 class="text-sm font-bold text-white mb-1">Paid Edit Video Pro</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Jasa edit video JJ, Reels, dan sinematik pro dengan transisi rapi dan pemotongan beat presisi.</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between" onclick="event.stopPropagation()">
-                        <span class="text-sm font-extrabold animated-gold-title">Rp 15.000</span>
-                        <button onclick="openProductDetailPage('paid-edit')" class="px-4 py-2 rounded-xl btn-gold text-xs font-bold flex items-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
+                    <div class="pt-3 border-t border-zinc-800 flex items-center justify-between" onclick="event.stopPropagation()">
+                        <span class="text-sm font-mono font-bold text-white">Rp 15.000</span>
+                        <button onclick="openProductDetailPage('paid-edit')" class="px-3.5 py-1.5 rounded-lg btn-bw text-xs font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
                     </div>
                 </div>
 
                 <!-- Coloring JJ HD -->
-                <div onclick="openProductDetailPage('coloring-hd')" class="product-card gold-panel p-6 rounded-3xl space-y-4 flex flex-col justify-between">
+                <div onclick="openProductDetailPage('coloring-hd')" class="product-card bw-panel p-5 rounded-2xl space-y-4 flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/30 text-sky-400 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-palette"></i></div>
-                        <h3 class="text-lg font-bold text-white mb-1">Coloring JJ HD</h3>
-                        <p class="text-xs text-sky-400 font-bold mb-2">Preset CC Ultra HD</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">Preset coloring khusus Alight Motion untuk menghasilkan tone warna super jernih tajam ala konten JJ kelas HD.</p>
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-palette"></i></div>
+                        <h3 class="text-sm font-bold text-white mb-1">Coloring JJ HD</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Preset coloring Alight Motion untuk tone warna super jernih tajam ala konten JJ kelas HD.</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between" onclick="event.stopPropagation()">
-                        <span class="text-sm font-extrabold animated-gold-title">Rp 10.000</span>
-                        <button onclick="openProductDetailPage('coloring-hd')" class="px-4 py-2 rounded-xl btn-gold text-xs font-bold flex items-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
+                    <div class="pt-3 border-t border-zinc-800 flex items-center justify-between" onclick="event.stopPropagation()">
+                        <span class="text-sm font-mono font-bold text-white">Rp 10.000</span>
+                        <button onclick="openProductDetailPage('coloring-hd')" class="px-3.5 py-1.5 rounded-lg btn-bw text-xs font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
                     </div>
                 </div>
 
                 <!-- Coloring JJ Kuning -->
-                <div onclick="openProductDetailPage('coloring-kuning')" class="product-card gold-panel p-6 rounded-3xl space-y-4 flex flex-col justify-between">
+                <div onclick="openProductDetailPage('coloring-kuning')" class="product-card bw-panel p-5 rounded-2xl space-y-4 flex flex-col justify-between">
                     <div>
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl font-bold mb-4"><i class="fa-solid fa-sun"></i></div>
-                        <h3 class="text-lg font-bold text-white mb-1">Coloring JJ Kuning Warm</h3>
-                        <p class="text-xs text-amber-400 font-bold mb-2">Preset CC Warm Gold</p>
-                        <p class="text-xs text-slate-300 leading-relaxed">Preset tone warna kuning hangat keemasan yang sangat populer dan sering FYP di TikTok & Alight Motion.</p>
+                        <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center text-lg mb-3"><i class="fa-solid fa-sun"></i></div>
+                        <h3 class="text-sm font-bold text-white mb-1">Coloring JJ Warm Tone</h3>
+                        <p class="text-xs text-zinc-400 leading-relaxed">Preset tone warna hangat keemasan yang populer di TikTok & Alight Motion.</p>
                     </div>
-                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between" onclick="event.stopPropagation()">
-                        <span class="text-sm font-extrabold animated-gold-title">Rp 10.000</span>
-                        <button onclick="openProductDetailPage('coloring-kuning')" class="px-4 py-2 rounded-xl btn-gold text-xs font-bold flex items-center gap-1"><i class="fa-solid fa-eye"></i> Detail</button>
+                    <div class="pt-3 border-t border-zinc-800 flex items-center justify-between" onclick="event.stopPropagation()">
+                        <span class="text-sm font-mono font-bold text-white">Rp 10.000</span>
+                        <button onclick="openProductDetailPage('coloring-kuning')" class="px-3.5 py-1.5 rounded-lg btn-bw text-xs font-bold"><i class="fa-solid fa-eye"></i> Detail</button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. PAGE KHUSUS DETAIL PRODUK (PINDAH HALAMAN / TAB FULL - BUKAN MODAL FLOATING) -->
-        <section id="page-product-detail" class="page-section space-y-8 max-w-4xl mx-auto">
-            
-            <!-- Tombol Kembali -->
+        <!-- 4. PAGE DETAIL PRODUK -->
+        <section id="page-product-detail" class="page-section space-y-8 max-w-3xl mx-auto">
             <div>
-                <button onclick="switchPage('products')" class="px-5 py-2.5 rounded-2xl gold-panel text-amber-300 text-xs font-bold hover:border-amber-400 transition inline-flex items-center gap-2">
+                <button onclick="switchPage('products')" class="px-4 py-2 rounded-xl bw-panel text-zinc-300 text-xs font-semibold hover:text-white transition inline-flex items-center gap-2">
                     <i class="fa-solid fa-arrow-left"></i> Kembali ke Katalog Produk
                 </button>
             </div>
 
-            <!-- Kartu Detail Utama ala Shopee / TikTok Shop -->
-            <div class="gold-panel rounded-3xl p-6 sm:p-8 space-y-8 border-amber-500/30 shadow-gold-glow">
+            <div class="bw-panel rounded-3xl p-6 sm:p-8 space-y-8">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Placeholder Foto Produk -->
-                    <div class="relative w-full h-64 sm:h-80 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col items-center justify-center overflow-hidden group">
-                        <div class="logo-emblem w-24 h-24 bg-slate-950 mb-3 opacity-80 animate-crown-logo">
-                            <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-amber-400 text-3xl\'></i>';">
+                    <div class="relative w-full h-64 sm:h-72 rounded-2xl bg-zinc-900 border border-zinc-800 flex flex-col items-center justify-center overflow-hidden">
+                        <div class="logo-emblem w-20 h-20 bg-zinc-950 mb-3 opacity-80">
+                            <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-white text-2xl\'></i>';">
                         </div>
-                        <span class="px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold border border-amber-500/40">📷 Foto Preview (Coming Soon)</span>
+                        <span class="px-3 py-1 rounded-full bg-white/10 text-zinc-300 text-[10px] font-mono border border-white/20">📷 Preview Digital</span>
                     </div>
 
-                    <!-- Informasi Produk -->
                     <div class="flex flex-col justify-between space-y-4">
                         <div>
-                            <span id="page-detail-badge" class="px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-[10px] font-bold uppercase tracking-wider">Garansi Resmi</span>
-                            <h2 id="page-detail-title" class="text-2xl sm:text-3xl font-extrabold text-white font-serif mt-3">Nama Produk</h2>
-                            <p id="page-detail-sub" class="text-xs text-amber-400 font-bold mt-1">Varian / Spesifikasi</p>
+                            <span id="page-detail-badge" class="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-zinc-300 text-[10px] font-mono uppercase">Garansi Resmi</span>
+                            <h2 id="page-detail-title" class="text-2xl font-bold text-white font-mono mt-3">Nama Produk</h2>
+                            <p id="page-detail-sub" class="text-xs text-zinc-400 font-mono mt-1">Varian / Spesifikasi</p>
                             
-                            <div class="flex items-center gap-3 mt-4 text-xs">
-                                <span class="text-amber-400 font-bold flex items-center gap-1"><i class="fa-solid fa-star"></i> <span id="page-detail-rating">4.9</span></span>
-                                <span class="text-slate-600">•</span>
-                                <span class="text-emerald-400 font-bold" id="page-detail-sales">Terjual 500+</span>
+                            <div class="flex items-center gap-3 mt-4 text-xs font-mono">
+                                <span class="text-white font-bold flex items-center gap-1"><i class="fa-solid fa-star"></i> <span id="page-detail-rating">4.9</span></span>
+                                <span class="text-zinc-600">•</span>
+                                <span class="text-zinc-400" id="page-detail-sales">Terjual 500+</span>
                             </div>
                         </div>
 
-                        <div class="pt-6 border-t border-slate-800 space-y-4">
-                            <div class="text-3xl font-black animated-gold-title" id="page-detail-price">Rp 0</div>
+                        <div class="pt-6 border-t border-zinc-800 space-y-4">
+                            <div class="text-2xl font-mono font-bold text-white" id="page-detail-price">Rp 0</div>
                             <div class="grid grid-cols-2 gap-3">
-                                <button id="page-detail-btn-cart" class="py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-amber-300 text-xs font-bold transition flex items-center justify-center gap-2"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
-                                <button id="page-detail-btn-buy" class="py-3.5 rounded-2xl btn-gold text-xs font-black transition flex items-center justify-center gap-2 shadow-gold-glow"><i class="fa-solid fa-bag-shopping"></i> Beli Sekarang</button>
+                                <button id="page-detail-btn-cart" class="py-3 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-white text-xs font-bold transition flex items-center justify-center gap-2"><i class="fa-solid fa-cart-plus"></i> Keranjang</button>
+                                <button id="page-detail-btn-buy" class="py-3 rounded-xl btn-bw text-xs font-extrabold transition flex items-center justify-center gap-2"><i class="fa-solid fa-bag-shopping"></i> Beli Sekarang</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tab Deskripsi & Ulasan Pembeli -->
-                <div class="space-y-6 pt-6 border-t border-slate-800">
-                    <div class="flex border-b border-slate-800 gap-8 text-xs font-bold">
-                        <button onclick="switchDetailPageTab('desc', this)" class="page-detail-tab-btn text-amber-400 pb-3 border-b-2 border-amber-400">Deskripsi Lengkap</button>
-                        <button onclick="switchDetailPageTab('reviews', this)" class="page-detail-tab-btn text-slate-400 hover:text-white pb-3">Ulasan Pembeli (<span id="page-detail-review-count">0</span>)</button>
+                <div class="space-y-6 pt-6 border-t border-zinc-800">
+                    <div class="flex border-b border-zinc-800 gap-8 text-xs font-bold font-mono">
+                        <button onclick="switchDetailPageTab('desc', this)" class="page-detail-tab-btn text-white pb-3 border-b-2 border-white">Deskripsi Lengkap</button>
+                        <button onclick="switchDetailPageTab('reviews', this)" class="page-detail-tab-btn text-zinc-500 hover:text-white pb-3">Ulasan Pembeli (<span id="page-detail-review-count">0</span>)</button>
                     </div>
 
-                    <!-- Content Deskripsi -->
-                    <div id="page-detail-tab-desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed space-y-3">
+                    <div id="page-detail-tab-desc" class="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3">
                         <p id="page-detail-description-text">Deskripsi lengkap produk tampil di sini.</p>
                     </div>
 
-                    <!-- Content Ulasan & Form -->
                     <div id="page-detail-tab-reviews" class="hidden space-y-6">
                         <div id="page-reviews-container" class="space-y-3 max-h-60 overflow-y-auto pr-2"></div>
 
-                        <!-- Form Tulis Ulasan -->
-                        <div class="gold-panel p-5 rounded-2xl space-y-3 border-amber-500/20">
-                            <h4 class="text-xs font-extrabold text-amber-300 uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-pen-to-square"></i> Tulis Ulasan Anda</h4>
+                        <div class="bw-panel p-4 rounded-2xl space-y-3 border-white/10">
+                            <h4 class="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-1.5"><i class="fa-solid fa-pen-to-square"></i> Tulis Ulasan Anda</h4>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                <input type="text" id="page-review-user-name" placeholder="Nama Anda (cth: Reihan)" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:border-amber-400 focus:outline-none">
-                                <select id="page-review-user-rating" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:border-amber-400 focus:outline-none">
+                                <input type="text" id="page-review-user-name" placeholder="Nama Anda (cth: Reihan)" class="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:border-white focus:outline-none">
+                                <select id="page-review-user-rating" class="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:border-white focus:outline-none">
                                     <option value="5">⭐⭐⭐⭐⭐ (5 Bintang)</option>
                                     <option value="4">⭐⭐⭐⭐ (4 Bintang)</option>
                                     <option value="3">⭐⭐⭐ (3 Bintang)</option>
                                 </select>
                             </div>
-                            <textarea id="page-review-user-comment" rows="3" placeholder="Bagaimana pengalaman Anda membeli produk ini di Reiyux Store?" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-white text-xs focus:border-amber-400 focus:outline-none"></textarea>
-                            <button onclick="submitPageUserReview()" class="w-full py-3 rounded-xl btn-gold text-xs font-black flex items-center justify-center gap-2"><i class="fa-solid fa-paper-plane"></i> Kirim Ulasan Saya</button>
+                            <textarea id="page-review-user-comment" rows="3" placeholder="Bagaimana pengalaman Anda membeli produk ini di Reiyux Store?" class="w-full px-3 py-2 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:border-white focus:outline-none"></textarea>
+                            <button onclick="submitPageUserReview()" class="w-full py-2.5 rounded-xl btn-bw text-xs font-bold flex items-center justify-center gap-2"><i class="fa-solid fa-paper-plane"></i> Kirim Ulasan Saya</button>
                         </div>
                     </div>
                 </div>
@@ -768,117 +755,111 @@
         </section>
 
         <!-- 5. BUKTI TESTIMONI PAGE -->
-        <section id="page-proof" class="page-section space-y-8 max-w-5xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
-                <h2 class="text-3xl sm:text-4xl font-black font-serif animated-gold-title">Testimoni Pembeli Setia</h2>
-                <p class="text-slate-400 text-sm">Ribuan transaksi sukses dan terpercaya di Reiyux Store.</p>
+        <section id="page-proof" class="page-section space-y-8 max-w-4xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white">Testimoni Pembeli</h2>
+                <p class="text-zinc-400 text-xs">Ulasan nyata dari pelanggan Reiyux Store.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="gold-panel p-6 rounded-3xl space-y-4">
-                    <div class="flex text-amber-400 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-xs text-slate-300 leading-relaxed italic">"Respon admin kilat banget! Beli Netflix langsung dikirim akunnya gak ada 5 menit. Recommended store!"</p>
-                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <div class="bw-panel p-5 rounded-2xl space-y-3">
+                    <div class="flex text-white text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-xs text-zinc-300 leading-relaxed italic">"Respon admin sangat cepat! Beli akun Netflix langsung dikirim tidak sampai 5 menit."</p>
+                    <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs">
                         <span class="font-bold text-white">Dimas Aditya</span>
-                        <span class="text-emerald-400 font-bold">Terverifikasi</span>
+                        <span class="text-zinc-500 font-mono">Terverifikasi</span>
                     </div>
                 </div>
-                <div class="gold-panel p-6 rounded-3xl space-y-4">
-                    <div class="flex text-amber-400 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-xs text-slate-300 leading-relaxed italic">"Order Preset Coloring JJ Kuning hasilnya gila jernih banget! Video TikTok langsung FYP!"</p>
-                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+                <div class="bw-panel p-5 rounded-2xl space-y-3">
+                    <div class="flex text-white text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-xs text-zinc-300 leading-relaxed italic">"Order Preset Coloring hasilnya sangat jernih! Sangat membantu untuk konten."</p>
+                    <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs">
                         <span class="font-bold text-white">Randi Pratama</span>
-                        <span class="text-emerald-400 font-bold">Terverifikasi</span>
+                        <span class="text-zinc-500 font-mono">Terverifikasi</span>
                     </div>
                 </div>
-                <div class="gold-panel p-6 rounded-3xl space-y-4">
-                    <div class="flex text-amber-400 text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    <p class="text-xs text-slate-300 leading-relaxed italic">"Jasa paid edit dan CC sinematiknya mantap jiwa! Video editan reels saya jadi aesthetic parah."</p>
-                    <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs">
+                <div class="bw-panel p-5 rounded-2xl space-y-3">
+                    <div class="flex text-white text-xs gap-1"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-xs text-zinc-300 leading-relaxed italic">"Jasa edit video sangat rapi dan pengerjaan tepat waktu. Sangat direkomendasikan!"</p>
+                    <div class="pt-3 border-t border-zinc-800 flex items-center justify-between text-xs">
                         <span class="font-bold text-white">Fikri Haikal</span>
-                        <span class="text-emerald-400 font-bold">Terverifikasi</span>
+                        <span class="text-zinc-500 font-mono">Terverifikasi</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- 6. GABUNG RESELLER PAGE -->
-        <section id="page-reseller" class="page-section space-y-8 max-w-4xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
-                <h2 class="text-3xl sm:text-4xl font-black font-serif animated-gold-title">Program Reseller Resmi</h2>
-                <p class="text-slate-400 text-sm">Dapatkan harga agen paling murah dan hasilkan keuntungan jutaan setiap bulannya!</p>
+        <section id="page-reseller" class="page-section space-y-8 max-w-3xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white">Program Reseller Resmi</h2>
+                <p class="text-zinc-400 text-xs">Bergabung menjadi mitra reseller Reiyux Store.</p>
             </div>
 
-            <div class="gold-panel p-8 rounded-3xl space-y-6 text-center border-amber-500/30 shadow-gold-glow">
-                <div class="w-16 h-16 mx-auto rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-2xl shadow-md">
+            <div class="bw-panel p-8 rounded-3xl space-y-6 text-center">
+                <div class="w-14 h-14 mx-auto rounded-2xl bg-white/10 border border-white/20 text-white flex items-center justify-center text-xl">
                     <i class="fa-solid fa-crown"></i>
                 </div>
-                <div class="space-y-3 max-w-lg mx-auto">
-                    <h3 class="text-xl font-extrabold text-white">Keuntungan Eksklusif Reseller Reiyux Store</h3>
-                    <ul class="text-xs sm:text-sm text-slate-300 space-y-2.5 text-left list-disc list-inside bg-slate-900/90 p-6 rounded-2xl border border-slate-800">
-                        <li><strong class="text-amber-400">Harga Modal Agen Super Murah:</strong> Keuntungan bersih lebih tinggi.</li>
-                        <li><strong class="text-amber-400">Garansi Penuh 100%:</strong> Dikawal langsung oleh tim support pusat.</li>
-                        <li><strong class="text-amber-400">Materi Promosi Gratis:</strong> Gambar banner & teks jualan siap pakai.</li>
+                <div class="space-y-3 max-w-md mx-auto">
+                    <h3 class="text-lg font-bold text-white font-mono">Fasilitas Reseller Reiyux Store</h3>
+                    <ul class="text-xs text-zinc-300 space-y-2 text-left list-disc list-inside bg-zinc-900 p-5 rounded-2xl border border-zinc-800">
+                        <li><strong class="text-white">Harga Agen Eksklusif:</strong> Akses harga khusus kemitraan.</li>
+                        <li><strong class="text-white">Garansi Penuh 100%:</strong> Bantuan kendala langsung oleh admin.</li>
+                        <li><strong class="text-white">Bahan Promosi:</strong> Media promosi siap pakai.</li>
                     </ul>
                 </div>
                 <div>
-                    <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20daftar%20Reseller" target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl btn-gold text-sm font-black shadow-gold-lg">
-                        <i class="fa-brands fa-whatsapp text-lg"></i> Daftar Reseller via WhatsApp
+                    <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20daftar%20Reseller" target="_blank" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl btn-bw text-xs font-extrabold">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Daftar Reseller via WhatsApp
                     </a>
                 </div>
             </div>
         </section>
 
         <!-- 7. FAQ PAGE -->
-        <section id="page-faq" class="page-section space-y-12 max-w-4xl mx-auto">
-            <div class="text-center max-w-2xl mx-auto space-y-3">
-                <h2 class="text-3xl sm:text-4xl font-black font-serif animated-gold-title">FAQ & Panduan Pemesanan</h2>
-                <p class="text-slate-400 text-sm">Petunjuk langkah demi langkah beserta jawaban atas pertanyaan umum Anda.</p>
+        <section id="page-faq" class="page-section space-y-10 max-w-3xl mx-auto">
+            <div class="text-center max-w-xl mx-auto space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold font-mono text-white">FAQ & Panduan Order</h2>
+                <p class="text-zinc-400 text-xs">Petunjuk langkah pemesanan dan jawaban pertanyaan umum.</p>
             </div>
 
-            <div class="space-y-6">
-                <div class="text-center space-y-1">
-                    <h3 class="text-xl font-extrabold font-serif text-amber-400">💡 3 Langkah Mudah Cara Order</h3>
-                    <p class="text-xs text-slate-400">Ikuti panduan berikut untuk bertransaksi dengan cepat</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="gold-panel p-6 rounded-3xl space-y-3 relative overflow-hidden group">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-black text-lg flex items-center justify-center shadow-md">1</div>
-                        <h4 class="font-extrabold text-white text-base">1. Pilih Produk & Checkout</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Pilih aplikasi atau preset yang Anda butuhkan di katalog, masukkan keranjang atau klik **Beli**.</p>
+            <div class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bw-panel p-5 rounded-2xl space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 text-white font-mono font-bold text-xs flex items-center justify-center">1</div>
+                        <h4 class="font-bold text-white text-xs">1. Pilih Produk</h4>
+                        <p class="text-[11px] text-zinc-400 leading-relaxed">Pilih aplikasi atau preset yang Anda butuhkan di katalog produk.</p>
                     </div>
-                    <div class="gold-panel p-6 rounded-3xl space-y-3 relative overflow-hidden group">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-black text-lg flex items-center justify-center shadow-md">2</div>
-                        <h4 class="font-extrabold text-white text-base">2. Bayar via QRIS / DANA</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Scan QRIS resmi atau transfer langsung ke nomor DANA toko Reiyux Store yang tertera.</p>
+                    <div class="bw-panel p-5 rounded-2xl space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 text-white font-mono font-bold text-xs flex items-center justify-center">2</div>
+                        <h4 class="font-bold text-white text-xs">2. Pembayaran</h4>
+                        <p class="text-[11px] text-zinc-400 leading-relaxed">Lakukan pembayaran via QRIS resmi atau transfer DANA toko.</p>
                     </div>
-                    <div class="gold-panel p-6 rounded-3xl space-y-3 relative overflow-hidden group">
-                        <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 font-black text-lg flex items-center justify-center shadow-md">3</div>
-                        <h4 class="font-extrabold text-white text-base">3. Konfirmasi & Terima Akun</h4>
-                        <p class="text-xs text-slate-400 leading-relaxed">Klik konfirmasi WhatsApp, admin akan memverifikasi dan mengirimkan pesanan Anda dalam 1-5 menit.</p>
+                    <div class="bw-panel p-5 rounded-2xl space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-white/10 text-white font-mono font-bold text-xs flex items-center justify-center">3</div>
+                        <h4 class="font-bold text-white text-xs">3. Konfirmasi</h4>
+                        <p class="text-[11px] text-zinc-400 leading-relaxed">Kirim bukti transfer ke WhatsApp admin untuk pemrosesan akun.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="space-y-4 pt-4">
-                <h3 class="text-xl font-extrabold font-serif text-amber-400 text-center mb-6">❓ Pertanyaan Sering Diajukan</h3>
-                
-                <div class="gold-panel rounded-2xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-5 text-left font-bold text-white flex items-center justify-between gap-4 focus:outline-none">
+            <div class="space-y-3 pt-2">
+                <div class="bw-panel rounded-2xl overflow-hidden">
+                    <button class="faq-btn w-full px-5 py-4 text-left font-bold text-white text-xs flex items-center justify-between gap-4 focus:outline-none">
                         <span>Bagaimana cara melakukan pemesanan di Reiyux Store?</span>
-                        <i class="fa-solid fa-chevron-down text-amber-400 transition-transform"></i>
+                        <i class="fa-solid fa-chevron-down text-zinc-400 text-xs transition-transform"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        Pilih produk di katalog, bayar via DANA atau QRIS, lalu konfirmasikan pesanan Anda ke WhatsApp admin (+6283165869029).
+                    <div class="faq-content hidden px-5 pb-4 text-xs text-zinc-400 leading-relaxed">
+                        Pilih produk di katalog, bayar via DANA atau QRIS, lalu konfirmasikan pesanan ke WhatsApp admin (+6283165869029).
                     </div>
                 </div>
-                <div class="gold-panel rounded-2xl overflow-hidden">
-                    <button class="faq-btn w-full px-6 py-5 text-left font-bold text-white flex items-center justify-between gap-4 focus:outline-none">
-                        <span>Apakah aplikasi dan preset yang dijual bergaransi resmi?</span>
-                        <i class="fa-solid fa-chevron-down text-amber-400 transition-transform"></i>
+                <div class="bw-panel rounded-2xl overflow-hidden">
+                    <button class="faq-btn w-full px-5 py-4 text-left font-bold text-white text-xs flex items-center justify-between gap-4 focus:outline-none">
+                        <span>Apakah produk yang dijual bergaransi?</span>
+                        <i class="fa-solid fa-chevron-down text-zinc-400 text-xs transition-transform"></i>
                     </button>
-                    <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                        Ya, seluruh produk dilindungi garansi penuh. Jika ada kendala, tim kami siap membantu hingga tuntas.
+                    <div class="faq-content hidden px-5 pb-4 text-xs text-zinc-400 leading-relaxed">
+                        Ya, seluruh produk dilindungi garansi resmi penuh selama masa aktif berlangganan.
                     </div>
                 </div>
             </div>
@@ -886,113 +867,115 @@
 
     </main>
 
+    <!-- TOAST ADD TO CART NOTIFICATION -->
+    <div id="cart-toast" class="fixed top-24 right-6 z-50 hidden flex items-center gap-3 px-4 py-3 rounded-xl bg-white text-black font-bold text-xs shadow-2xl">
+        <i class="fa-solid fa-circle-check text-sm"></i>
+        <span id="cart-toast-msg">Berhasil ditambahkan ke keranjang!</span>
+    </div>
+
     <!-- LIVE PURCHASE TOAST NOTIFICATION -->
-    <div id="live-toast" class="fixed bottom-6 left-6 z-40 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl gold-panel border-amber-500/40 shadow-2xl max-w-xs transform translate-y-20 opacity-0 pointer-events-none">
-        <div class="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center font-bold flex-shrink-0">
-            <i class="fa-solid fa-bag-shopping text-sm"></i>
+    <div id="live-toast" class="fixed bottom-6 left-6 z-40 hidden sm:flex items-center gap-3 p-3.5 rounded-2xl bw-panel shadow-2xl max-w-xs transform translate-y-20 opacity-0 pointer-events-none">
+        <div class="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center font-bold flex-shrink-0">
+            <i class="fa-solid fa-bag-shopping text-xs"></i>
         </div>
         <div>
             <p id="toast-title" class="text-xs font-bold text-white leading-snug">Rian dari Bandung</p>
-            <p id="toast-desc" class="text-[10px] text-amber-300 font-medium">Membeli <strong class="text-white">Coloring JJ HD</strong> (Baru saja)</p>
+            <p id="toast-desc" class="text-[10px] text-zinc-400 font-medium">Membeli <strong class="text-white">Coloring JJ HD</strong> (Baru saja)</p>
         </div>
     </div>
 
     <!-- CHECKOUT MODAL -->
-    <div id="checkoutModal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-md z-50 flex items-center justify-center hidden p-4">
-        <div class="w-full max-w-lg bg-[#0f172a] border border-amber-500/40 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-gold-lg relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 w-9 h-9 rounded-xl bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
+    <div id="checkoutModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4">
+        <div class="w-full max-w-md bg-zinc-950 border border-white/20 rounded-3xl p-6 flex flex-col justify-between shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-5 right-5 w-8 h-8 rounded-xl bg-zinc-900 text-zinc-400 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-xmark text-xs"></i></button>
             
-            <div class="space-y-6">
+            <div class="space-y-5">
                 <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl shadow-md"><i class="fa-solid fa-wallet"></i></div>
+                    <div class="w-10 h-10 rounded-xl bg-white/10 text-white flex items-center justify-center text-lg"><i class="fa-solid fa-wallet"></i></div>
                     <div>
-                        <h3 class="text-lg font-extrabold text-white font-serif">Checkout Pembayaran</h3>
-                        <p class="text-xs text-slate-400">Pilih metode pembayaran aman pilihan Anda</p>
+                        <h3 class="text-base font-bold text-white font-mono">Checkout Pembayaran</h3>
+                        <p class="text-xs text-zinc-400">Pilih metode pembayaran yang tersedia</p>
                     </div>
                 </div>
 
-                <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 space-y-2 text-xs">
-                    <div class="flex justify-between"><span class="text-slate-400">Produk Dipilih:</span> <span id="modal-product-name" class="font-bold text-white"></span></div>
-                    <div class="flex justify-between"><span class="text-slate-400">Total Tagihan:</span> <span id="modal-product-price" class="font-extrabold animated-gold-title text-sm"></span></div>
+                <div class="p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2 text-xs font-mono">
+                    <div class="flex justify-between"><span class="text-zinc-400">Produk:</span> <span id="modal-product-name" class="font-bold text-white"></span></div>
+                    <div class="flex justify-between"><span class="text-zinc-400">Total Tagihan:</span> <span id="modal-product-price" class="font-bold text-white"></span></div>
                 </div>
 
-                <div class="space-y-3">
-                    <label class="text-xs font-bold text-amber-400 uppercase tracking-wider">Pilihan Pembayaran:</label>
+                <div class="space-y-2">
+                    <label class="text-xs font-mono font-bold text-zinc-400 uppercase tracking-wider">Pilihan Pembayaran:</label>
                     <div class="grid grid-cols-2 gap-3">
-                        <label class="gold-panel p-3.5 rounded-2xl flex items-center gap-3 cursor-pointer border-2 border-amber-500 bg-amber-500/10" onclick="selectPayment('QRIS')">
-                            <input type="radio" name="paymentMethod" checked class="text-amber-500 focus:ring-amber-400">
+                        <label class="bw-panel p-3 rounded-xl flex items-center gap-2.5 cursor-pointer border-white bg-white/10" onclick="selectPayment('QRIS')">
+                            <input type="radio" name="paymentMethod" checked class="text-black focus:ring-white">
                             <div class="text-xs font-bold text-white flex items-center gap-1.5">
-                                <i class="fa-solid fa-qrcode text-amber-400"></i>
+                                <i class="fa-solid fa-qrcode"></i>
                                 <span>QRIS (All QR)</span>
                             </div>
                         </label>
 
-                        <label class="gold-panel p-3.5 rounded-2xl flex items-center gap-3 cursor-pointer border border-slate-800" onclick="selectPayment('DANA')">
-                            <input type="radio" name="paymentMethod" class="text-amber-500 focus:ring-amber-400">
-                            <div class="text-xs font-bold text-white flex items-center gap-2">
-                                <span class="px-2 py-0.5 rounded bg-sky-500 text-white font-black text-[10px] tracking-wider uppercase flex items-center gap-1">
-                                    <i class="fa-solid fa-wallet text-[9px]"></i> DANA
-                                </span>
+                        <label class="bw-panel p-3 rounded-xl flex items-center gap-2.5 cursor-pointer border-zinc-800" onclick="selectPayment('DANA')">
+                            <input type="radio" name="paymentMethod" class="text-black focus:ring-white">
+                            <div class="text-xs font-bold text-white flex items-center gap-1.5">
+                                <i class="fa-solid fa-wallet"></i>
+                                <span>DANA</span>
                             </div>
                         </label>
                     </div>
                 </div>
 
-                <div id="payment-info-box" class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-center space-y-3">
+                <div id="payment-info-box" class="p-4 rounded-2xl bg-zinc-900 border border-zinc-800 text-center space-y-3">
                     <div id="qris-content" class="space-y-2">
-                        <p class="text-xs font-bold text-slate-300">Scan QRIS Resmi Reiyux Store (M Reihan Ramdani)</p>
-                        <div class="w-48 h-48 mx-auto bg-white p-2 rounded-xl shadow-md border">
+                        <p class="text-xs font-bold text-zinc-300">Scan QRIS Resmi Reiyux Store (M Reihan Ramdani)</p>
+                        <div class="w-44 h-44 mx-auto bg-white p-2 rounded-xl shadow-md">
                             <img src="https://i.ibb.co.com/5hr36YR8/QRIS.jpg" alt="QRIS Reiyux Store" class="w-full h-full object-contain rounded-lg">
                         </div>
-                        <p class="text-[10px] text-slate-500">NMID: ID1026566003368 • A01</p>
+                        <p class="text-[10px] text-zinc-500 font-mono">NMID: ID1026566003368 • A01</p>
                     </div>
                     
                     <div id="wallet-content" class="space-y-3 hidden">
-                        <div class="flex items-center justify-center gap-2 pt-1">
-                            <span class="px-3 py-1 rounded-lg bg-sky-500/20 border border-sky-500/40 text-sky-400 font-black text-xs uppercase flex items-center gap-1.5">
-                                <i class="fa-solid fa-wallet text-sm"></i> AKUN RESMI DANA
-                            </span>
-                        </div>
-                        <p class="text-xs font-bold text-slate-300">Transfer ke Nomor DANA Toko:</p>
-                        <div class="text-lg font-black text-amber-400 bg-slate-950 py-3 rounded-xl border border-slate-800 tracking-wider">0831-6586-9029</div>
-                        <p class="text-[11px] text-slate-400">Atas Nama: <strong class="text-white">M Reihan Ramdani</strong></p>
+                        <p class="text-xs font-bold text-zinc-300">Transfer ke Nomor DANA Toko:</p>
+                        <div class="text-base font-mono font-bold text-white bg-zinc-950 py-2.5 rounded-xl border border-zinc-800">0831-6586-9029</div>
+                        <p class="text-[11px] text-zinc-400">Atas Nama: <strong class="text-white">M Reihan Ramdani</strong></p>
                     </div>
                 </div>
 
                 <div class="space-y-2">
-                    <button onclick="finishCheckout()" class="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-black text-xs shadow-lg transition flex items-center justify-center gap-2">
+                    <button onclick="finishCheckout()" class="w-full py-3.5 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-base"></i> Konfirmasi Pesanan ke WhatsApp Admin
                     </button>
-                    <p class="text-[10px] text-center text-slate-500">Setelah transfer, klik tombol di atas untuk mengirim detail pesanan ke WhatsApp.</p>
+                    <p class="text-[10px] text-center text-zinc-500">Setelah transfer, klik tombol di atas untuk konfirmasi pesanan.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- DRAWER KERANJANG BELANJA -->
-    <div id="cartDrawer" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex justify-end hidden">
-        <div class="w-full max-w-md h-full bg-[#0f172a] border-l border-amber-500/30 p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative">
+    <div id="cartDrawer" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex justify-end hidden">
+        <div class="w-full max-w-md h-full bg-zinc-950 border-l border-white/10 p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative">
             <div>
-                <div class="flex items-center justify-between pb-6 border-b border-slate-800">
+                <div class="flex items-center justify-between pb-6 border-b border-zinc-800">
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-400 flex items-center justify-center font-bold"><i class="fa-solid fa-cart-shopping"></i></div>
+                        <div class="w-9 h-9 rounded-xl bg-white/10 text-white flex items-center justify-center text-sm font-bold"><i class="fa-solid fa-bag-shopping"></i></div>
                         <div>
-                            <h3 class="text-base font-extrabold text-white font-serif">Keranjang Belanja</h3>
-                            <p class="text-[11px] text-slate-400">Daftar item pilihan Anda</p>
+                            <h3 class="text-sm font-bold text-white font-mono">Keranjang Belanja</h3>
+                            <p class="text-[11px] text-zinc-400">Daftar item pilihan Anda</p>
                         </div>
                     </div>
-                    <button onclick="toggleCartDrawer()" class="w-9 h-9 rounded-xl bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-xmark"></i></button>
+                    <button onclick="toggleCartDrawer()" class="w-8 h-8 rounded-xl bg-zinc-900 text-zinc-400 hover:text-white flex items-center justify-center transition"><i class="fa-solid fa-xmark text-xs"></i></button>
                 </div>
-                <div id="cart-items-container" class="space-y-3 max-h-[50vh] overflow-y-auto pr-1 my-6"></div>
+                
+                <div id="cart-items-container" class="space-y-3 max-h-[50vh] overflow-y-auto pr-1 my-4"></div>
             </div>
-            <div class="space-y-4 pt-6 border-t border-slate-800">
+
+            <div class="space-y-4 pt-4 border-t border-zinc-800">
                 <div class="flex items-center justify-between">
-                    <span class="text-sm font-bold text-slate-400">Total Pembayaran:</span>
-                    <span id="cart-total-price" class="text-lg font-black animated-gold-title">Rp 0</span>
+                    <span class="text-xs font-bold text-zinc-400">Total Pembayaran:</span>
+                    <span id="cart-total-price" class="text-base font-mono font-bold text-white">Rp 0</span>
                 </div>
                 <div class="space-y-2">
-                    <button onclick="checkoutCart()" class="w-full py-3.5 rounded-xl btn-gold text-xs font-black shadow-gold-glow flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp text-base"></i> Checkout Keranjang ke WhatsApp</button>
-                    <button onclick="clearCart()" class="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition">Kosongkan Keranjang</button>
+                    <button onclick="checkoutCart()" class="w-full py-3 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp text-sm"></i> Checkout ke WhatsApp</button>
+                    <button onclick="clearCart()" class="w-full py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 font-medium text-xs transition">Kosongkan Keranjang</button>
                 </div>
             </div>
         </div>
@@ -1000,115 +983,114 @@
 
     <!-- FLOATING WHATSAPP BUTTON -->
     <div class="fixed bottom-6 right-6 z-40">
-        <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20bertanya" target="_blank" class="w-14 h-14 rounded-2xl btn-gold flex items-center justify-center text-2xl shadow-gold-lg hover:scale-110 transition-all font-bold" title="WhatsApp Admin">
+        <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store,%20saya%20ingin%20bertanya" target="_blank" class="w-12 h-12 rounded-2xl btn-bw flex items-center justify-center text-xl shadow-2xl hover:scale-105 transition-transform" title="WhatsApp Admin">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </div>
 
     <!-- FOOTER -->
-    <footer class="bg-[#060911]/95 backdrop-blur-md border-t border-amber-500/20 py-6 mt-12 transition-colors">
+    <footer class="bg-zinc-950 border-t border-white/10 py-6 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div class="flex items-center gap-3">
-                <div class="logo-emblem w-8 h-8 bg-slate-900 animate-crown-logo">
-                    <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-amber-400 text-xs\'></i>';">
+                <div class="logo-emblem w-7 h-7 bg-zinc-900">
+                    <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-white text-xs\'></i>';">
                 </div>
-                <span class="text-xs font-extrabold font-serif animated-gold-title">Reiyux Store &copy; 2026 • Official Digital Hub</span>
+                <span class="text-xs font-mono font-bold text-zinc-400">Reiyux Store &copy; 2026 • Official Digital Hub</span>
             </div>
             <div class="flex items-center gap-3">
-                <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 text-amber-400 flex items-center justify-center hover:bg-amber-500/20 transition" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="https://www.instagram.com/reiiramdanii_?mdxt=NnlpYm8xaGR5eG45" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 text-amber-400 flex items-center justify-center hover:bg-amber-500/20 transition" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@reiipresettt?_r=1&_t=ZS-9Ae2fgA9eXQ" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 text-amber-400 flex items-center justify-center hover:bg-amber-500/20 transition" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://wa.me/6283165869029?text=Halo%20Reiyux%20Store" target="_blank" class="w-8 h-8 rounded-lg bg-zinc-900 text-zinc-300 flex items-center justify-center hover:text-white transition" title="WhatsApp"><i class="fa-brands fa-whatsapp text-xs"></i></a>
+                <a href="https://www.instagram.com/reiiramdanii_?mdxt=NnlpYm8xaGR5eG45" target="_blank" class="w-8 h-8 rounded-lg bg-zinc-900 text-zinc-300 flex items-center justify-center hover:text-white transition" title="Instagram"><i class="fa-brands fa-instagram text-xs"></i></a>
+                <a href="https://www.tiktok.com/@reiipresettt?_r=1&_t=ZS-9Ae2fgA9eXQ" target="_blank" class="w-8 h-8 rounded-lg bg-zinc-900 text-zinc-300 flex items-center justify-center hover:text-white transition" title="TikTok"><i class="fa-brands fa-tiktok text-xs"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // DATABASE DETAIL PRODUK LENGKAP
         const productsDB = {
             'alight-motion': {
                 name: 'Alight Motion Pro',
                 sub: '1 Tahun Private',
-                badge: 'Full Garansi 1 Tahun',
+                badge: 'Garansi Full 1 Tahun',
                 price: 10000,
                 rating: 4.9,
                 sales: 'Terjual 520+',
-                desc: 'Aplikasi Alight Motion Pro Private durasi panjang 1 Tahun penuh. Memberikan kamu akses tak terbatas ke semua efek visual pro, tanpa watermark di hasil ekspor, bisa import preset XML & Project link sepuasnya tanpa batas ukuran file.',
+                desc: 'Aplikasi Alight Motion Pro Private durasi 1 Tahun penuh. Memberikan akses tak terbatas ke semua efek visual pro, tanpa watermark di hasil ekspor, dan dapat mengimpor preset XML & Project link tanpa batasan.',
                 reviews: [
-                    { name: "Fajar Santoso", rating: 5, comment: "Akun private aman banget, durasi 1 tahun beneran awet sampai sekarang!" },
-                    { name: "Reza Editor", rating: 5, comment: "Bisa import preset XML tanpa masalah. Paling recommended!" }
+                    { name: "Fajar Santoso", rating: 5, comment: "Akun private sangat aman, durasi berjalan normal tanpa kendala." },
+                    { name: "Reza Editor", rating: 5, comment: "Bisa impor preset XML dengan lancar. Sangat bagus!" }
                 ]
             },
             'spotify': {
                 name: 'Spotify Premium',
                 sub: '1 Bulan Private',
-                badge: 'Full Garansi',
+                badge: 'Garansi Resmi',
                 price: 20000,
                 rating: 4.9,
                 sales: 'Terjual 780+',
-                desc: 'Nikmati jutaan musik favorit tanpa jeda iklan, bebas skip lagu tanpa batas, unduh lagu untuk didengarkan secara offline saat tidak ada kuota, dan rasakan kualitas audio super jernih Extremely High.',
+                desc: 'Dengarkan musik favorit tanpa jeda iklan, bebas skip lagu, unduh musik untuk diputar offline, dan nikmati kualitas audio jernih Extremely High.',
                 reviews: [
-                    { name: "Doni Prasetyo", rating: 5, comment: "Proses cepat 2 menit langsung aktif di email pribadi!" }
+                    { name: "Doni Prasetyo", rating: 5, comment: "Proses cepat dan langsung aktif di email pribadi." }
                 ]
             },
             'canva': {
                 name: 'Canva Pro',
                 sub: '1 Bulan Private',
-                badge: 'Full Garansi',
+                badge: 'Garansi Resmi',
                 price: 5000,
                 rating: 4.9,
                 sales: 'Terjual 1.2K+',
-                desc: 'Akses penuh ke semua elemen desain premium, font pro eksklusif, jutaan template presentasi dan media sosial, serta fitur ajaib Hapus Latar Belakang foto hanya dengan 1 kali klik.',
+                desc: 'Akses penuh ke semua elemen desain premium, font eksklusif, template presentasi & media sosial, serta fitur penghapus latar belakang foto otomatis.',
                 reviews: [
-                    { name: "Nadia Putri", rating: 5, comment: "Harganya murah banget cuma 5rb dapet Canva Pro legal." }
+                    { name: "Nadia Putri", rating: 5, comment: "Fitur Canva Pro terbuka penuh, sangat membantu pekerjaan." }
                 ]
             },
             'netflix': {
                 name: 'Netflix Premium',
                 sub: '1 Bulan SemiPrivate',
-                badge: 'Full Garansi',
+                badge: 'Garansi Resmi',
                 price: 35000,
                 rating: 4.9,
                 sales: 'Terjual 950+',
-                desc: 'Streaming ribuan film bioskop dan TV series hits dengan kualitas visual terbaik Ultra HD 4K. Bebas batas tontonan, akun stabil anti kendala layar merah.',
+                desc: 'Streaming film dan TV series favorit dengan kualitas visual Ultra HD 4K. Akun stabil dan bergaransi resmi.',
                 reviews: [
-                    { name: "Rian Hidayat", rating: 5, comment: "Kualitas 4K tajam banget dipasang di Smart TV. Seller gercep." }
+                    { name: "Rian Hidayat", rating: 5, comment: "Kualitas gambar 4K tajam di Smart TV. Pengerjaan cepat." }
                 ]
             },
             'capcut': {
                 name: 'CapCut Pro',
                 sub: '1 Bulan Private',
-                badge: 'Full Garansi',
+                badge: 'Garansi Resmi',
                 price: 23000,
                 rating: 4.9,
                 sales: 'Terjual 630+',
-                desc: 'Buka semua fitur VIP CapCut, efek transisi eksklusif, perbaikan suara AI, pemotong objek video otomatis, serta hilangkan watermark ekspor.',
+                desc: 'Akses seluruh fitur VIP CapCut, efek transisi eksklusif, pemproses audio AI, serta penghilang watermark ekspor.',
                 reviews: [
-                    { name: "Eko Prasetyo", rating: 5, comment: "Fitur AI Capcut Pro kebuka semua, mantap joss!" }
+                    { name: "Eko Prasetyo", rating: 5, comment: "Seluruh fitur CapCut Pro bisa digunakan tanpa kendala." }
                 ]
             },
             'youtube': {
                 name: 'YouTube Premium',
                 sub: '1 Bulan Private',
-                badge: 'Full Garansi',
+                badge: 'Garansi Resmi',
                 price: 10000,
                 rating: 4.9,
                 sales: 'Terjual 820+',
-                desc: 'Nonton video YouTube bebas dari segala jenis iklan, dapat memutar video di latar belakang (*background play*) saat membuka aplikasi lain, dan bebas menggunakan YouTube Music Premium.',
+                desc: 'Pemutaran video tanpa iklan, pemutaran di latar belakang (background play), dan akses YouTube Music Premium.',
                 reviews: [
-                    { name: "Bagus Setiawan", rating: 5, comment: "Nonton YouTube tenang tanpa iklan ganggu. Mantap Reiyux Store!" }
+                    { name: "Bagus Setiawan", rating: 5, comment: "Pemutaran video lancar tanpa iklan." }
                 ]
             },
             'wink': {
                 name: 'Wink VIP',
                 sub: '1 Bulan Private',
-                badge: 'Full Garansi',
+                badge: 'Garansi Resmi',
                 price: 20000,
                 rating: 4.9,
                 sales: 'Terjual 310+',
-                desc: 'Aplikasi AI ajaib untuk meningkatkan kualitas video dari buram menjadi sangat jernih HD, fitur melembutkan wajah (*beauty edit*), dan penstabil gerakan video pecah.',
+                desc: 'Fitur AI untuk peningkatan kualitas video buram menjadi jernih HD, pemutihan wajah, dan penstabil video.',
                 reviews: [
-                    { name: "Siska K", rating: 5, comment: "Video buram langsung jadi bening HD. Langganan terus!" }
+                    { name: "Siska K", rating: 5, comment: "Kualitas video meningkat jernih setelah diproses." }
                 ]
             },
             'chatgpt': {
@@ -1118,20 +1100,20 @@
                 price: 0,
                 rating: 5.0,
                 sales: 'Soon',
-                desc: 'Model AI tercanggih dengan fitur analisis data mendalam, pembuatan gambar AI, dan respon pesan super cepat.',
+                desc: 'Model AI versi plus dengan kapabilitas analisis data tingkat lanjut dan performa cepat.',
                 reviews: []
             },
             'paid-edit': {
                 name: 'Paid Edit Video Pro',
                 sub: 'Jasa Edit Sinematik & JJ',
-                badge: 'Jasa Service',
+                badge: 'Layanan Service',
                 price: 15000,
                 rating: 5.0,
                 sales: 'Terjual 280+',
-                desc: 'Jasa editing video profesional dari Reiyux Store. Cocok untuk konten TikTok, Instagram Reels, maupun YouTube Shorts. Pemotongan rapi, transisi jedag-jedug pas beat, dan garansi revisi gratis sampai cocok.',
+                desc: 'Layanan editing video profesional dari Reiyux Store. Cocok untuk konten TikTok, Instagram Reels, maupun YouTube Shorts dengan transisi presisi.',
                 reviews: [
-                    { name: "Andi Saputra", rating: 5, comment: "Hasil editan sangat rapi, transisi JJ-nya pas banget sama lagunya!" },
-                    { name: "Rina Kartika", rating: 5, comment: "Proses cepat dan admin ramah. Sangat recommended!" }
+                    { name: "Andi Saputra", rating: 5, comment: "Pengerjaan editan rapi dan transisi pas sesuai musik." },
+                    { name: "Rina Kartika", rating: 5, comment: "Admin ramah dan pengerjaan tepat waktu." }
                 ]
             },
             'coloring-hd': {
@@ -1141,28 +1123,27 @@
                 price: 10000,
                 rating: 4.9,
                 sales: 'Terjual 450+',
-                desc: 'Preset coloring khusus Alight Motion (XML / Project link) yang dirancang untuk memperjernih video dan memberikan tone tajam berkualitas HD tanpa pecah.',
+                desc: 'Preset coloring Alight Motion (XML / Project link) yang dirancang untuk memberikan tone tajam berkualitas HD.',
                 reviews: [
-                    { name: "Bayu Respati", rating: 5, comment: "Coloringnya gila sih jernih banget di HP ku, auto FYP!" }
+                    { name: "Bayu Respati", rating: 5, comment: "Coloring sangat jernih saat diterapkan pada video." }
                 ]
             },
             'coloring-kuning': {
-                name: 'Coloring JJ Kuning',
-                sub: 'Preset CC Warm Gold Aesthetic',
+                name: 'Coloring JJ Warm Tone',
+                sub: 'Preset CC Warm Aesthetic',
                 badge: 'Preset XML / AM',
                 price: 10000,
                 rating: 5.0,
                 sales: 'Terjual 670+',
-                desc: 'Preset coloring khas tone keemasan hangat (Warm Gold) yang paling sering dipakai oleh kreator video viral di TikTok & Alight Motion.',
+                desc: 'Preset coloring khas tone hangat yang sering digunakan oleh kreator konten di TikTok & Alight Motion.',
                 reviews: [
-                    { name: "Siti Rahma", rating: 5, comment: "Warna kuningnya pas banget gak lebay. Mantap Reiyux Store!" }
+                    { name: "Siti Rahma", rating: 5, comment: "Tone warna pas dan estetik." }
                 ]
             }
         };
 
         let currentActiveProductId = '';
 
-        // PINDAH KE HALAMAN DETAIL PRODUK LENGKAP (FULL PAGE TAB - NO FLOATING)
         function openProductDetailPage(productId) {
             const item = productsDB[productId];
             if (!item) return;
@@ -1176,7 +1157,6 @@
             document.getElementById('page-detail-sales').textContent = item.sales;
             document.getElementById('page-detail-description-text').textContent = item.desc;
 
-            // Set Action Buttons
             document.getElementById('page-detail-btn-cart').onclick = () => { 
                 if(item.price > 0) addToCart(item.name, item.price); 
                 else alert('Produk belum tersedia!');
@@ -1195,7 +1175,7 @@
             document.getElementById('page-detail-review-count').textContent = reviews.length;
 
             if (reviews.length === 0) {
-                container.innerHTML = '<p class="text-xs text-slate-500 italic py-3 text-center">Belum ada ulasan untuk produk ini. Jadilah yang pertama memberikan ulasan!</p>';
+                container.innerHTML = '<p class="text-xs text-zinc-500 italic py-3 text-center">Belum ada ulasan untuk produk ini.</p>';
                 return;
             }
 
@@ -1203,12 +1183,12 @@
             reviews.forEach(r => {
                 let stars = '⭐'.repeat(r.rating);
                 html += `
-                    <div class="p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs space-y-1.5">
+                    <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 text-xs space-y-1">
                         <div class="flex items-center justify-between">
                             <span class="font-bold text-white">${r.name}</span>
-                            <span class="text-[10px] text-amber-400">${stars}</span>
+                            <span class="text-[10px] text-zinc-400">${stars}</span>
                         </div>
-                        <p class="text-slate-300 leading-relaxed">${r.comment}</p>
+                        <p class="text-zinc-300 leading-relaxed">${r.comment}</p>
                     </div>
                 `;
             });
@@ -1237,9 +1217,9 @@
 
         function switchDetailPageTab(tab, btn) {
             document.querySelectorAll('.page-detail-tab-btn').forEach(b => {
-                b.className = 'page-detail-tab-btn text-slate-400 hover:text-white pb-3';
+                b.className = 'page-detail-tab-btn text-zinc-500 hover:text-white pb-3';
             });
-            btn.className = 'page-detail-tab-btn text-amber-400 pb-3 border-b-2 border-amber-400';
+            btn.className = 'page-detail-tab-btn text-white pb-3 border-b-2 border-white';
 
             if (tab === 'desc') {
                 document.getElementById('page-detail-tab-desc').classList.remove('hidden');
@@ -1251,11 +1231,12 @@
         }
 
         function toggleProfileDrawer() { document.getElementById('profileDrawer').classList.toggle('hidden'); }
+
         function copyStoreLink() {
             navigator.clipboard.writeText(window.location.href);
             const textEl = document.getElementById('share-btn-text');
             textEl.textContent = 'Link Disalin! ✨';
-            setTimeout(() => { textEl.textContent = 'Bagikan Store'; }, 2500);
+            setTimeout(() => { textEl.textContent = 'Bagikan Link'; }, 2500);
         }
 
         function switchPage(pageId, event) {
@@ -1270,17 +1251,17 @@
                 
                 document.querySelectorAll('.nav-link').forEach(l => {
                     if(l.getAttribute('data-target') === pageId) {
-                        l.classList.add('bg-amber-500/10', 'text-amber-400', 'border', 'border-amber-500/30', 'font-bold');
-                        l.classList.remove('text-slate-300', 'hover:bg-slate-800/50');
+                        l.classList.add('bg-white/10', 'text-white', 'border', 'border-white/20', 'font-semibold');
+                        l.classList.remove('text-zinc-400', 'hover:bg-zinc-800/50');
                     } else {
-                        l.classList.remove('bg-amber-500/10', 'text-amber-400', 'border', 'border-amber-500/30', 'font-bold');
-                        l.classList.add('text-slate-300', 'hover:bg-slate-800/50');
+                        l.classList.remove('bg-white/10', 'text-white', 'border', 'border-white/20', 'font-semibold');
+                        l.classList.add('text-zinc-400', 'hover:bg-zinc-800/50');
                     }
                 });
 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 loader.classList.remove('active');
-            }, 300); 
+            }, 200); 
         }
 
         const mobileMenuBtn = document.getElementById('menu-btn');
@@ -1328,10 +1309,19 @@
         function addToCart(productName, price) {
             cart.push({ name: productName, price: price });
             updateCartUI();
-            toggleCartDrawer();
+            showCartToast(productName);
         }
+
+        function showCartToast(itemName) {
+            const toast = document.getElementById('cart-toast');
+            document.getElementById('cart-toast-msg').textContent = `${itemName} ditambahkan ke keranjang!`;
+            toast.classList.remove('hidden');
+            setTimeout(() => { toast.classList.add('hidden'); }, 3000);
+        }
+
         function removeFromCart(index) { cart.splice(index, 1); updateCartUI(); }
         function clearCart() { cart = []; updateCartUI(); }
+
         function updateCartUI() {
             const badge = document.getElementById('cart-badge');
             const container = document.getElementById('cart-items-container');
@@ -1340,7 +1330,7 @@
             badge.textContent = cart.length;
 
             if (cart.length === 0) {
-                container.innerHTML = '<p class="text-xs text-slate-500 text-center py-12">Keranjang belanja Anda masih kosong.</p>';
+                container.innerHTML = '<p class="text-xs text-zinc-500 text-center py-12">Keranjang belanja masih kosong.</p>';
                 totalPriceEl.textContent = 'Rp 0';
                 return;
             }
@@ -1350,39 +1340,81 @@
             cart.forEach((item, index) => {
                 total += item.price;
                 html += `
-                    <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900 border border-slate-800 text-xs">
-                        <div><h4 class="font-bold text-white">${item.name}</h4><p class="text-amber-400 font-semibold">${item.price > 0 ? 'Rp ' + item.price.toLocaleString('id-ID') : 'Tanya Admin'}</p></div>
-                        <button onclick="removeFromCart(${index})" class="text-rose-400 hover:text-rose-600 p-2"><i class="fa-solid fa-trash"></i></button>
+                    <div class="flex items-center justify-between p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-xs">
+                        <div><h4 class="font-bold text-white">${item.name}</h4><p class="text-zinc-400 font-mono">${item.price > 0 ? 'Rp ' + item.price.toLocaleString('id-ID') : 'Tanya Admin'}</p></div>
+                        <button onclick="removeFromCart(${index})" class="text-zinc-500 hover:text-white p-2"><i class="fa-solid fa-trash text-xs"></i></button>
                     </div>
                 `;
             });
+            
             container.innerHTML = html;
             totalPriceEl.textContent = total > 0 ? 'Rp ' + total.toLocaleString('id-ID') : 'Tergantung Pesanan';
         }
+
         function toggleCartDrawer() { document.getElementById('cartDrawer').classList.toggle('hidden'); }
+        
         function checkoutCart() {
             if (cart.length === 0) { alert('Keranjang belanja masih kosong!'); return; }
             let text = "Halo Reiyux Store, saya ingin memesan produk dari keranjang:\n\n";
             let total = 0;
             cart.forEach((item, i) => {
-                text += `${i + 1}. ${item.name} (${item.price > 0 ? 'Rp ' + item.price.toLocaleString('id-ID') : 'Tergantung Pesanan'})\n`;
+                text += `${i + 1}. ${item.name} (${item.price > 0 ? 'Rp ' + item.price.toLocaleString('id-ID') : 'Tanya Admin'})\n`;
                 total += item.price;
             });
-            text += `\nTotal: ${total > 0 ? 'Rp ' + total.toLocaleString('id-ID') : 'Tergantung Pesanan'}\n\nMohon segera diproses ya kak!`;
+
+            text += `\n*Total Akhir:* Rp ${total.toLocaleString('id-ID')}\n\nMohon segera diproses ya kak!`;
             window.open(`https://wa.me/6283165869029?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        let selectedTag = 'all';
+
+        function filterCategoryTag(tag, btn) {
+            selectedTag = tag;
+            document.querySelectorAll('.tag-filter-btn').forEach(b => {
+                b.className = 'tag-filter-btn px-4 py-1.5 rounded-xl bg-zinc-900 text-zinc-400 border border-zinc-800 hover:text-white text-xs font-medium transition';
+            });
+            btn.className = 'tag-filter-btn px-4 py-1.5 rounded-xl bg-white text-black text-xs font-bold transition';
+            filterProducts();
         }
 
         function filterProducts() {
             const query = document.getElementById('searchInput').value.toLowerCase();
             document.querySelectorAll('#product-grid .product-card').forEach(card => {
-                card.style.display = card.getAttribute('data-name').includes(query) ? 'flex' : 'none';
+                const name = card.getAttribute('data-name').toLowerCase();
+                const cat = card.getAttribute('data-category');
+                
+                const matchesQuery = name.includes(query);
+                const matchesCategory = (selectedTag === 'all' || cat === selectedTag);
+
+                if (matchesQuery && matchesCategory) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
             });
+        }
+
+        function sortProducts() {
+            const sortVal = document.getElementById('sortSelect').value;
+            const grid = document.getElementById('product-grid');
+            const cards = Array.from(grid.children);
+
+            cards.sort((a, b) => {
+                const priceA = parseInt(a.getAttribute('data-price')) || 0;
+                const priceB = parseInt(b.getAttribute('data-price')) || 0;
+
+                if (sortVal === 'low-to-high') return priceA - priceB;
+                if (sortVal === 'high-to-low') return priceB - priceA;
+                return 0;
+            });
+
+            cards.forEach(card => grid.appendChild(card));
         }
 
         const fakeBuyers = [
             { name: "Rian dari Bandung", item: "Coloring JJ HD" },
             { name: "Siti dari Jakarta", item: "Canva Pro" },
-            { name: "Budi dari Surabaya", item: "Coloring JJ Kuning" },
+            { name: "Budi dari Surabaya", item: "Coloring JJ Warm" },
             { name: "Dina dari Semarang", item: "Paid Edit Video Pro" },
             { name: "Fajri dari Makassar", item: "Alight Motion Pro" }
         ];
