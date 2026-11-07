@@ -1,13 +1,15 @@
+```html
 <!DOCTYPE html>
 <html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reiyux Store — Official Digital Hub</title>
+    <title>Reiyux Store — Official Digital Hub & Service App</title>
     
     <!-- SEO & OG Meta Tags -->
-    <meta name="description" content="Pusat layanan akun aplikasi premium, jasa paid edit, dan CC sinematik terpercaya bergaransi penuh di Reiyux Store.">
+    <meta name="description" content="Pusat langganan akun aplikasi premium, jasa paid edit, dan CC sinematik terpercaya bergaransi penuh di Reiyux Store.">
     <meta property="og:title" content="Reiyux Store — Official Digital Hub">
+    <meta name="theme-color" content="#040405">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,8 +53,8 @@
         /* Black & White Premium Glass Panel */
         .bw-panel {
             background: rgba(18, 18, 21, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border: 1px solid rgba(255, 255, 255, 0.08);
             transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
             will-change: transform;
@@ -103,7 +105,7 @@
             height: 100%;
         }
 
-        /* BESAR & Keren: Animasi Teknologi Hologram & Ring Scanner */
+        /* Animasi Teknologi Hologram & Ring Scanner di Beranda */
         @keyframes techSpin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -149,11 +151,47 @@
             transform: translateY(0);
         }
 
+        /* Struk / Invoice Digital Styling */
+        .receipt-container {
+            background: #09090b;
+            border: 1px dashed rgba(255, 255, 255, 0.25);
+            position: relative;
+        }
+        .receipt-container::before, .receipt-container::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #040405;
+            border-radius: 9999px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .receipt-container::before { left: -9px; }
+        .receipt-container::after { right: -9px; }
+
+        /* Print Media Styles for Receipt Download/Print */
+        @media print {
+            body * { visibility: hidden; }
+            #printable-invoice-area, #printable-invoice-area * { visibility: visible; }
+            #printable-invoice-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                color: #000;
+                background: #fff !important;
+                border: 2px dashed #000 !important;
+                padding: 20px;
+            }
+            .no-print { display: none !important; }
+        }
+
         /* Drawers & Notifications */
         #profileDrawer { transition: opacity 0.25s ease; }
         #profileDrawerContent { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
         #profileDrawer.hidden #profileDrawerContent { transform: translateX(-100%); }
-        #live-toast, #cart-toast { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+        #live-toast, #cart-toast, #pwa-banner { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
 
         /* Loader Spinner */
         #page-loader {
@@ -165,6 +203,23 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between bw-grid-bg selection:bg-white selection:text-black">
+
+    <!-- PWA INSTALL BANNER (FITUR 1) -->
+    <div id="pwa-banner" class="fixed top-20 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-50 hidden bw-panel p-4 rounded-2xl shadow-2xl border-white/30 flex items-center justify-between gap-3 transform -translate-y-10 opacity-0">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white text-black flex items-center justify-center font-bold font-mono text-sm shadow-md flex-shrink-0">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+            <div>
+                <h4 class="text-xs font-bold text-white leading-snug">Pasang App Reiyux Store</h4>
+                <p class="text-[10px] text-zinc-400">Akses cepat & tanpa batas langsung dari HP</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2">
+            <button onclick="dismissPwaBanner()" class="px-2.5 py-1.5 rounded-lg text-zinc-400 hover:text-white text-[11px] font-semibold">Nanti</button>
+            <button onclick="installPwaApp()" class="px-3 py-1.5 rounded-lg btn-bw text-[11px] font-bold">Install</button>
+        </div>
+    </div>
 
     <!-- PAGE TRANSITION SPINNER -->
     <div id="page-loader">
@@ -337,11 +392,11 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-grow pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative">
 
-        <!-- 1. HOME PAGE (HANYA HALAMAN INI YANG ADA ANIMASI TEKNOLOGI BESAR) -->
+        <!-- 1. HOME PAGE (DENGAN ANIMASI HOLOGRAM TEKNOLOGI BESAR) -->
         <section id="page-home" class="page-section active-page space-y-16 pt-4">
             <div class="text-center max-w-3xl mx-auto space-y-8 flex flex-col items-center">
                 
-                <!-- BESAR & KEREN: ANIMASI TEKNOLOGI HOLOGRAM & SCANNER DI HALAMAN UTAMA -->
+                <!-- ANIMASI TEKNOLOGI HOLOGRAM & SCANNER -->
                 <div class="relative w-44 h-44 sm:w-52 sm:h-52 flex items-center justify-center cursor-pointer group" onclick="toggleProfileDrawer()">
                     <!-- Ring 1 Outer Tech Dashed -->
                     <div class="absolute inset-0 rounded-full border border-dashed border-white/30 tech-ring-1"></div>
@@ -381,7 +436,7 @@
                         </div>
                         <div class="flex items-start gap-2 text-zinc-400">
                             <i class="fa-solid fa-check text-white mt-0.5"></i>
-                            <span><strong>Akses VIP Unlocked:</strong> Bebas iklan & fitur lengkap.</span>
+                            <span><strong>Struk Digital Otomatis:</strong> ID Invoice resmi terbit langsung.</span>
                         </div>
                         <div class="flex items-start gap-2 text-zinc-400">
                             <i class="fa-solid fa-check text-white mt-0.5"></i>
@@ -837,8 +892,8 @@
                     </div>
                     <div class="bw-panel p-5 rounded-2xl space-y-2">
                         <div class="w-8 h-8 rounded-lg bg-white/10 text-white font-mono font-bold text-xs flex items-center justify-center">3</div>
-                        <h4 class="font-bold text-white text-xs">3. Konfirmasi</h4>
-                        <p class="text-[11px] text-zinc-400 leading-relaxed">Kirim bukti transfer ke WhatsApp admin untuk pemrosesan akun.</p>
+                        <h4 class="font-bold text-white text-xs">3. Konfirmasi Struk</h4>
+                        <p class="text-[11px] text-zinc-400 leading-relaxed">Dapatkan Struk Digital unik dan kirim ke WhatsApp admin.</p>
                     </div>
                 </div>
             </div>
@@ -850,7 +905,7 @@
                         <i class="fa-solid fa-chevron-down text-zinc-400 text-xs transition-transform"></i>
                     </button>
                     <div class="faq-content hidden px-5 pb-4 text-xs text-zinc-400 leading-relaxed">
-                        Pilih produk di katalog, bayar via DANA atau QRIS, lalu konfirmasikan pesanan ke WhatsApp admin (+6283165869029).
+                        Pilih produk di katalog, bayar via DANA atau QRIS, lalu konfirmasikan Struk Digital ke WhatsApp admin (+6283165869029).
                     </div>
                 </div>
                 <div class="bw-panel rounded-2xl overflow-hidden">
@@ -898,6 +953,12 @@
                     </div>
                 </div>
 
+                <!-- Input Nama Pembeli -->
+                <div class="space-y-1.5">
+                    <label class="text-[11px] font-mono font-bold text-zinc-300 uppercase">Nama Lengkap Pemesan:</label>
+                    <input type="text" id="buyer-name-input" placeholder="Masukkan nama Anda..." class="w-full px-3.5 py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-white text-xs focus:border-white focus:outline-none">
+                </div>
+
                 <div class="p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 space-y-2 text-xs font-mono">
                     <div class="flex justify-between"><span class="text-zinc-400">Produk:</span> <span id="modal-product-name" class="font-bold text-white"></span></div>
                     <div class="flex justify-between"><span class="text-zinc-400">Total Tagihan:</span> <span id="modal-product-price" class="font-bold text-white"></span></div>
@@ -941,10 +1002,91 @@
                 </div>
 
                 <div class="space-y-2">
-                    <button onclick="finishCheckout()" class="w-full py-3.5 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-base"></i> Konfirmasi Pesanan ke WhatsApp Admin
+                    <button onclick="generateDigitalInvoice()" class="w-full py-3.5 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-receipt"></i> Terbitkan Struk Digital & Konfirmasi WA
                     </button>
-                    <p class="text-[10px] text-center text-zinc-500">Setelah transfer, klik tombol di atas untuk konfirmasi pesanan.</p>
+                    <p class="text-[10px] text-center text-zinc-500">Klik tombol di atas untuk melihat Struk Resmi dan konfirmasi pesanan.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- POPUP MODAL STRUK / INVOICE DIGITAL FUTURISTIK (FITUR 3) -->
+    <div id="invoiceModal" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 flex items-center justify-center hidden p-4">
+        <div class="w-full max-w-md bg-zinc-950 border border-white/20 rounded-3xl p-6 flex flex-col justify-between shadow-2xl relative max-h-[95vh] overflow-y-auto">
+            <button onclick="closeInvoiceModal()" class="absolute top-5 right-5 w-8 h-8 rounded-xl bg-zinc-900 text-zinc-400 hover:text-white flex items-center justify-center transition no-print"><i class="fa-solid fa-xmark text-xs"></i></button>
+
+            <div id="printable-invoice-area" class="space-y-5">
+                
+                <!-- HEADER STRUK -->
+                <div class="text-center pb-4 border-b border-zinc-800 space-y-2">
+                    <div class="logo-emblem w-12 h-12 bg-zinc-900 border border-white/20 mx-auto">
+                        <img src="https://ibb.co.com/6cNykRJN" alt="Reiyux Store Logo" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\'fa-solid fa-crown text-white text-lg\'></i>';">
+                    </div>
+                    <div>
+                        <h3 class="text-base font-bold font-mono text-white tracking-wider">REIYUX STORE</h3>
+                        <p class="text-[10px] text-zinc-400 font-mono uppercase">Official Digital Hub Invoice</p>
+                    </div>
+                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-white border border-white/20 text-[10px] font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> MENUNGGU KONFIRMASI WA
+                    </div>
+                </div>
+
+                <!-- KOTAK DETAIL TRANSAKSI STRUK -->
+                <div class="receipt-container p-4 rounded-2xl space-y-3 font-mono text-xs">
+                    <div class="flex justify-between border-b border-zinc-800/80 pb-2">
+                        <span class="text-zinc-400">ID Transaksi:</span>
+                        <strong id="invoice-id-val" class="text-white font-bold">RYX-2026-0000</strong>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-zinc-400">Tanggal:</span>
+                        <span id="invoice-date-val" class="text-zinc-200">7 Nov 2026</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-zinc-400">Nama Pemesan:</span>
+                        <span id="invoice-buyer-val" class="text-white font-bold">Pelanggan</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-zinc-400">Metode Bayar:</span>
+                        <span id="invoice-method-val" class="text-white font-bold">QRIS</span>
+                    </div>
+
+                    <!-- TABEL DUKUNGAN RINCIAN ITEM -->
+                    <div class="pt-2 border-t border-zinc-800 space-y-2">
+                        <div class="text-[10px] uppercase font-bold text-zinc-400">Rincian Item Pesanan:</div>
+                        <div id="invoice-items-list" class="space-y-1.5 text-zinc-300">
+                            <!-- Items auto-populated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="pt-3 border-t border-zinc-800 space-y-1">
+                        <div class="flex justify-between text-zinc-400"><span>Subtotal</span><span id="invoice-subtotal-val">Rp 0</span></div>
+                        <div class="flex justify-between text-zinc-400"><span>Biaya Admin</span><span>Rp 0 (Gratis)</span></div>
+                        <div class="flex justify-between text-white font-bold text-sm pt-1 border-t border-zinc-800">
+                            <span>TOTAL BAYAR</span>
+                            <span id="invoice-total-val">Rp 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-[10px] text-zinc-500 font-mono text-center space-y-1">
+                    <p>Owner: M REIHAN RAMDANI • WA: 083165869029</p>
+                    <p>Simpan Struk Digital ini sebagai bukti garansi resmi.</p>
+                </div>
+            </div>
+
+            <!-- TOMBOL AKSI STRUK -->
+            <div class="space-y-2.5 pt-4 border-t border-zinc-800 no-print">
+                <button onclick="sendInvoiceToWhatsApp()" class="w-full py-3.5 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Kirim Struk & Konfirmasi WA
+                </button>
+                <div class="grid grid-cols-2 gap-2">
+                    <button onclick="window.print()" class="py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-white text-zinc-300 hover:text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-print"></i> Cetak Struk
+                    </button>
+                    <button onclick="copyInvoiceCode()" class="py-2.5 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-white text-zinc-300 hover:text-white text-xs font-bold transition flex items-center justify-center gap-1.5">
+                        <i class="fa-solid fa-copy"></i> Salin ID Struk
+                    </button>
                 </div>
             </div>
         </div>
@@ -974,7 +1116,7 @@
                     <span id="cart-total-price" class="text-base font-mono font-bold text-white">Rp 0</span>
                 </div>
                 <div class="space-y-2">
-                    <button onclick="checkoutCart()" class="w-full py-3 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp text-sm"></i> Checkout ke WhatsApp</button>
+                    <button onclick="checkoutCart()" class="w-full py-3 rounded-xl btn-bw text-xs font-extrabold flex items-center justify-center gap-2"><i class="fa-brands fa-whatsapp text-sm"></i> Checkout Ke Pembayaran</button>
                     <button onclick="clearCart()" class="w-full py-2 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-400 font-medium text-xs transition">Kosongkan Keranjang</button>
                 </div>
             </div>
@@ -1007,6 +1149,9 @@
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
+        /* ----------------------------------------------------
+           DATABASE PRODUK & SERVICES
+        ---------------------------------------------------- */
         const productsDB = {
             'alight-motion': {
                 name: 'Alight Motion Pro',
@@ -1144,6 +1289,9 @@
 
         let currentActiveProductId = '';
 
+        /* ----------------------------------------------------
+           DETAIL PRODUK & ULASAN
+        ---------------------------------------------------- */
         function openProductDetailPage(productId) {
             const item = productsDB[productId];
             if (!item) return;
@@ -1230,10 +1378,23 @@
             }
         }
 
+        /* ----------------------------------------------------
+           NAVIGASI DASAR & DRAWER
+        ---------------------------------------------------- */
         function toggleProfileDrawer() { document.getElementById('profileDrawer').classList.toggle('hidden'); }
 
         function copyStoreLink() {
-            navigator.clipboard.writeText(window.location.href);
+            const textToCopy = window.location.href;
+            if(navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(textToCopy);
+            } else {
+                const input = document.createElement('input');
+                input.value = textToCopy;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+            }
             const textEl = document.getElementById('share-btn-text');
             textEl.textContent = 'Link Disalin! ✨';
             setTimeout(() => { textEl.textContent = 'Bagikan Link'; }, 2500);
@@ -1271,13 +1432,19 @@
         }
         function toggleMobileMenu() { if(mobileMenu) mobileMenu.classList.add('hidden'); }
 
+        /* ----------------------------------------------------
+           CHECKOUT & PEMBAYARAN
+        ---------------------------------------------------- */
         let activeProduct = '';
         let activePrice = 0;
         let selectedPaymentMethod = 'QRIS';
+        let checkoutItemsList = []; // list object { name, price }
 
         function openCheckoutModal(productName, price) {
             activeProduct = productName;
             activePrice = price;
+            checkoutItemsList = [{ name: productName, price: price }];
+            
             document.getElementById('modal-product-name').textContent = productName;
             document.getElementById('modal-product-price').textContent = 'Rp ' + price.toLocaleString('id-ID');
             document.getElementById('checkoutModal').classList.remove('hidden');
@@ -1299,12 +1466,102 @@
             }
         }
 
-        function finishCheckout() {
-            let text = `Halo Reiyux Store, saya ingin memesan produk:\n\n*Produk:* ${activeProduct}\n*Total:* Rp ${activePrice.toLocaleString('id-ID')}\n*Metode Pembayaran:* ${selectedPaymentMethod}\n\nMohon segera diproses ya kak! Terima kasih.`;
-            window.open(`https://wa.me/6283165869029?text=${encodeURIComponent(text)}`, '_blank');
+        /* ----------------------------------------------------
+           FITUR 3: GENERATE STRUK / INVOICE DIGITAL FUTURISTIK
+        ---------------------------------------------------- */
+        let currentInvoiceData = null;
+
+        function generateDigitalInvoice() {
+            const buyerInput = document.getElementById('buyer-name-input').value.trim();
+            const buyerName = buyerInput ? buyerInput : 'Pelanggan Reiyux';
+
+            // Generate ID Unik Invoice: RYX-2026-XXXX
+            const randomCode = Math.floor(1000 + Math.random() * 9000);
+            const invoiceId = `RYX-2026-${randomCode}`;
+            
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) + ' WIB';
+
+            let subtotal = 0;
+            let itemsHtml = '';
+            
+            checkoutItemsList.forEach(item => {
+                subtotal += item.price;
+                itemsHtml += `
+                    <div class="flex justify-between items-center text-xs">
+                        <span>• ${item.name}</span>
+                        <span class="font-bold text-white">Rp ${item.price.toLocaleString('id-ID')}</span>
+                    </div>
+                `;
+            });
+
+            currentInvoiceData = {
+                id: invoiceId,
+                date: dateStr,
+                buyer: buyerName,
+                method: selectedPaymentMethod,
+                items: checkoutItemsList,
+                total: subtotal
+            };
+
+            // Set UI modal Struk Digital
+            document.getElementById('invoice-id-val').textContent = invoiceId;
+            document.getElementById('invoice-date-val').textContent = dateStr;
+            document.getElementById('invoice-buyer-val').textContent = buyerName;
+            document.getElementById('invoice-method-val').textContent = selectedPaymentMethod;
+            document.getElementById('invoice-items-list').innerHTML = itemsHtml;
+            document.getElementById('invoice-subtotal-val').textContent = 'Rp ' + subtotal.toLocaleString('id-ID');
+            document.getElementById('invoice-total-val').textContent = 'Rp ' + subtotal.toLocaleString('id-ID');
+
             closeCheckoutModal();
+            document.getElementById('invoiceModal').classList.remove('hidden');
         }
 
+        function closeInvoiceModal() {
+            document.getElementById('invoiceModal').classList.add('hidden');
+        }
+
+        function copyInvoiceCode() {
+            if (!currentInvoiceData) return;
+            const code = currentInvoiceData.id;
+            if(navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code);
+            } else {
+                const input = document.createElement('input');
+                input.value = code;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+            }
+            alert(`Kode Struk (${code}) berhasil disalin!`);
+        }
+
+        function sendInvoiceToWhatsApp() {
+            if (!currentInvoiceData) return;
+
+            let itemsFormatted = '';
+            currentInvoiceData.items.forEach((it, i) => {
+                itemsFormatted += `${i + 1}. ${it.name} (Rp ${it.price.toLocaleString('id-ID')})\n`;
+            });
+
+            let waMessage = `*REIYUX STORE — STRUK DIGITAL RESMI*\n` +
+                `----------------------------------------\n` +
+                `*ID Transaksi:* ${currentInvoiceData.id}\n` +
+                `*Tanggal:* ${currentInvoiceData.date}\n` +
+                `*Nama Pemesan:* ${currentInvoiceData.buyer}\n` +
+                `*Metode Bayar:* ${currentInvoiceData.method}\n\n` +
+                `*Rincian Item Pesanan:*\n${itemsFormatted}\n` +
+                `*TOTAL BAYAR:* Rp ${currentInvoiceData.total.toLocaleString('id-ID')}\n` +
+                `----------------------------------------\n` +
+                `*Status:* Sudah Melakukan Pembayaran. Halo Admin Reiyux Store, mohon konfirmasi pesanan saya ya kak! Terima kasih.`;
+
+            window.open(`https://wa.me/6283165869029?text=${encodeURIComponent(waMessage)}`, '_blank');
+        }
+
+        /* ----------------------------------------------------
+           KERANJANG BELANJA
+        ---------------------------------------------------- */
         let cart = [];
         function addToCart(productName, price) {
             cart.push({ name: productName, price: price });
@@ -1355,17 +1612,24 @@
         
         function checkoutCart() {
             if (cart.length === 0) { alert('Keranjang belanja masih kosong!'); return; }
-            let text = "Halo Reiyux Store, saya ingin memesan produk dari keranjang:\n\n";
+            
             let total = 0;
-            cart.forEach((item, i) => {
-                text += `${i + 1}. ${item.name} (${item.price > 0 ? 'Rp ' + item.price.toLocaleString('id-ID') : 'Tanya Admin'})\n`;
-                total += item.price;
-            });
+            cart.forEach(item => total += item.price);
+            
+            checkoutItemsList = [...cart];
+            activeProduct = `Keranjang (${cart.length} Item)`;
+            activePrice = total;
 
-            text += `\n*Total Akhir:* Rp ${total.toLocaleString('id-ID')}\n\nMohon segera diproses ya kak!`;
-            window.open(`https://wa.me/6283165869029?text=${encodeURIComponent(text)}`, '_blank');
+            document.getElementById('modal-product-name').textContent = activeProduct;
+            document.getElementById('modal-product-price').textContent = 'Rp ' + total.toLocaleString('id-ID');
+            
+            toggleCartDrawer();
+            document.getElementById('checkoutModal').classList.remove('hidden');
         }
 
+        /* ----------------------------------------------------
+           FILTER & SORTIR PRODUK
+        ---------------------------------------------------- */
         let selectedTag = 'all';
 
         function filterCategoryTag(tag, btn) {
@@ -1411,6 +1675,9 @@
             cards.forEach(card => grid.appendChild(card));
         }
 
+        /* ----------------------------------------------------
+           SIMULASI LIVE TOAST PEMBELIAN
+        ---------------------------------------------------- */
         const fakeBuyers = [
             { name: "Rian dari Bandung", item: "Coloring JJ HD" },
             { name: "Siti dari Jakarta", item: "Canva Pro" },
@@ -1442,6 +1709,91 @@
                 btn.querySelector('i').classList.toggle('rotate-180');
             });
         });
+
+        /* ----------------------------------------------------
+           FITUR 1: INTEGRASI PWA (PROGRESSIVE WEB APP)
+        ---------------------------------------------------- */
+        let deferredPrompt;
+        const pwaBanner = document.getElementById('pwa-banner');
+
+        // Dynamically inject PWA Web App Manifest via Data-URI
+        const manifestData = {
+            "name": "Reiyux Store — Official Digital Hub",
+            "short_name": "ReiyuxStore",
+            "description": "Layanan akun aplikasi premium, jasa edit video, dan preset CC sinematik terpercaya.",
+            "start_url": "./",
+            "display": "standalone",
+            "background_color": "#040405",
+            "theme_color": "#040405",
+            "icons": [
+                {
+                    "src": "https://ibb.co.com/6cNykRJN",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "https://ibb.co.com/6cNykRJN",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+        const manifestBlob = new Blob([JSON.stringify(manifestData)], {type: 'application/json'});
+        const manifestURL = URL.createObjectURL(manifestBlob);
+        const linkElem = document.createElement('link');
+        linkElem.rel = 'manifest';
+        linkElem.href = manifestURL;
+        document.head.appendChild(linkElem);
+
+        // Capture PWA Install Prompt
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            showPwaInstallBanner();
+        });
+
+        function showPwaInstallBanner() {
+            if(!pwaBanner) return;
+            pwaBanner.classList.remove('hidden');
+            setTimeout(() => {
+                pwaBanner.classList.remove('-translate-y-10', 'opacity-0');
+            }, 100);
+        }
+
+        function dismissPwaBanner() {
+            if(!pwaBanner) return;
+            pwaBanner.classList.add('-translate-y-10', 'opacity-0');
+            setTimeout(() => { pwaBanner.classList.add('hidden'); }, 400);
+        }
+
+        function installPwaApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('User menerima install PWA Reiyux Store');
+                    }
+                    deferredPrompt = null;
+                    dismissPwaBanner();
+                });
+            } else {
+                alert('Untuk memasang di HP: Tekan tombol titik tiga di browser Anda, lalu pilih "Tambahkan ke Layar Utama" / "Add to Home Screen".');
+                dismissPwaBanner();
+            }
+        }
+
+        // Dummy Service Worker untuk Kesiapan PWA Offline
+        if ('serviceWorker' in navigator) {
+            const swCode = `
+                self.addEventListener('install', (e) => { self.skipWaiting(); });
+                self.addEventListener('activate', (e) => { self.clients.claim(); });
+                self.addEventListener('fetch', (e) => { e.respondWith(fetch(e.request).catch(() => caches.match(e.request))); });
+            `;
+            const swBlob = new Blob([swCode], { type: 'text/javascript' });
+            const swUrl = URL.createObjectURL(swBlob);
+            navigator.serviceWorker.register(swUrl).catch(err => console.log('SW Register:', err));
+        }
     </script>
 </body>
 </html>
+```
